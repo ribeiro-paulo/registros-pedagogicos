@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Pedagoga;
+import model.dao.GenericDAO;
 
 /**
  *
@@ -27,13 +28,14 @@ public class CadastrarPedagogaServlet extends HttpServlet {
             throws ServletException, IOException {
 
         Pedagoga pedagoga = new Pedagoga();
+        GenericDAO<Pedagoga> dao = new GenericDAO<>();
 
         pedagoga.setNome(request.getParameter("nome"));
         pedagoga.setSiape(Integer.parseInt(request.getParameter("siape")));
         pedagoga.setUsuario(request.getParameter("usuario"));
         pedagoga.setSenha(request.getParameter("senha"));
         
-        
+        dao.saveOrUpdate(pedagoga);
     }
     
 }

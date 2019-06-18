@@ -5,7 +5,11 @@
  */
 package tests;
 
+import java.util.ArrayList;
+import java.util.List;
+import model.bean.Aluno;
 import model.bean.Pedagoga;
+import model.dao.AlunoDAO;
 import model.dao.GenericDAO;
 
 /**
@@ -21,14 +25,23 @@ public class TesteDAO {
 //        
 //        dao.inserir(pedagoga);
 
-        Pedagoga p = new Pedagoga();
-        GenericDAO<Pedagoga> daoP = new GenericDAO<>();
-        p.setSiape(123);
-        p.setNome("Ilma");
-        p.setUsuario("il");
-        p.setSenha("123");
-        daoP.saveOrUpdate(p);
+//        Pedagoga p = new Pedagoga();
+//        GenericDAO<Pedagoga> daoP = new GenericDAO<>();
+//        p.setSiape(123);
+//        p.setNome("Ilma");
+//        p.setUsuario("il");
+//        p.setSenha("123");
+//        daoP.saveOrUpdate(p);
 
+        Aluno a = new Aluno();
+        a.setMatricula(111);
+        a.setNivel("Integrado");
+        a.setNome("Júnior");
+        a.setTurma("INF31A");
+        
+        GenericDAO<Aluno> daoP = new GenericDAO<>();
+        
+        daoP.saveOrUpdate(a);
     }
 }
 

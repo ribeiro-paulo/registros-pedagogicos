@@ -1,0 +1,8 @@
+model\dao\BaseEntity.class
+model\dao\GenericDAO.class
+util\ConnectionFactory.class
+model\bean\Pedagoga.class
+servlet\CadastrarPedagogaServlet.class
+model\dao\PedagogaDAO.class
+tests\TesteDAO.class
+servlet\LoginServlet.class

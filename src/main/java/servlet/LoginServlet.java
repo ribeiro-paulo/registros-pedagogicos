@@ -21,49 +21,49 @@ import model.dao.PedagogaDAO;
  * @author eddunic
  */
 public class LoginServlet extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         doPost(request, response);
-        
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        if (!"".equals(request.getParameter("usuario")) && !"".equals(request.getParameter("senha"))) {
-	    
-	    Pedagoga pedagoga = new Pedagoga();
+        String usuario = request.getParameter("usuario");
+        String senha = request.getParameter("senha");
 
-            pedagoga.setUsuario(request.getParameter("usuario"));
-            pedagoga.setSenha(request.getParameter("senha"));
+        PedagogaDAO pDao = new PedagogaDAO();
 
-	    List<Pedagoga> pedagogas;
-            PedagogaDAO dao = new PedagogaDAO();
-	    
-	    pedagogas = dao.buscarPorLogin(pedagoga);
+        Long idPedagoga = pDao.login(usuario, senha);
 
-            if (!pedagogas.isEmpty()) {	
-                request.setAttribute("usuario", request.getParameter("usuario"));
-                response.sendRedirect("../registros_pedagogicos/jsp/home-relatos.jsp");
-            } else {
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Relatos Pedagógicos</title>");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<script language = 'JavaScript'>");
-                out.println("    alert('Cadastro inexistente'); window.location.href='../relatos_pedagogicos/index.jsp';");
-                out.println(" </script>");
-                out.println("</body>");
-                out.println("</html>");
-                out.close();
+        Pedagoga p;
+
+        if (idPedagoga == null) {
+            out.println("NULL");
+        } else if (idPedagoga == -1) {
+            out.println("-1");
+        } else {
+            try {
+                GenericDAO<Pedagoga> pDao2 = new GenericDAO<>();
+                p = pDao2.findById(Pedagoga.class, idPedagoga);
+                if (p != null) {
+                    request.getSession().setAttribute("usuario", p);
+                    response.sendRedirect("/registros_pedagogicos/jsp/home-relatos.jsp");
+                } else {
+                    out.println("ERRO");
+                }
+            } catch (IOException e) {
+                out.println("ERRO " + e.getMessage());
             }
+
         }
     }
 
