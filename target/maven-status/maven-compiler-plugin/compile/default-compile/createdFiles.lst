@@ -1,8 +1,13 @@
-model\dao\BaseEntity.class
-model\dao\GenericDAO.class
+model\bean\Registro.class
 util\ConnectionFactory.class
+model\dao\AlunoDAO.class
 model\bean\Pedagoga.class
 servlet\CadastrarPedagogaServlet.class
+model\dao\RegistroDAO.class
+servlet\LoginServlet.class
+model\bean\Aluno.class
+model\dao\BaseEntity.class
+model\dao\GenericDAO.class
+tests\AdicionarAlunos.class
 model\dao\PedagogaDAO.class
 tests\TesteDAO.class
-servlet\LoginServlet.class

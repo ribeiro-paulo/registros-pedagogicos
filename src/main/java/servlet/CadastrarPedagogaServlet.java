@@ -14,13 +14,13 @@ import model.dao.GenericDAO;
  * @author eddunic
  */
 public class CadastrarPedagogaServlet extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         doPost(request, response);
-        
+
     }
 
     @Override
@@ -31,14 +31,14 @@ public class CadastrarPedagogaServlet extends HttpServlet {
         GenericDAO<Pedagoga> dao = new GenericDAO<>();
 
         pedagoga.setNome(request.getParameter("nome"));
-        pedagoga.setSiape(Integer.parseInt(request.getParameter("siape")));
+        pedagoga.setSiape((request.getParameter("siape")));
         pedagoga.setUsuario(request.getParameter("usuario"));
         pedagoga.setSenha(request.getParameter("senha"));
-        
+
         dao.saveOrUpdate(pedagoga);
+
+        request.getSession().setAttribute("usuario", pedagoga);
+        response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
     }
-    
+
 }
-
-
-

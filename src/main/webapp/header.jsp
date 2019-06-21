@@ -8,7 +8,7 @@
         </div> 
         <ul class="nav navbar-nav navbar-right">
             <div class="btn-group">
-                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-outline-light   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user fa-lg"></i> <c:out value="${usuario.nome}"></c:out>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">

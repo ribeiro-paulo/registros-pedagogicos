@@ -23,7 +23,7 @@ public class Aluno implements BaseEntity, Serializable {
     @Column
     private String nome;
     @Column
-    private double matricula;
+    private String matricula;
     @Column
     private String nivel;
     @Column
@@ -34,7 +34,7 @@ public class Aluno implements BaseEntity, Serializable {
     public Aluno() {
     }
     
-    public Aluno(double matricula, String nome, String nivel, String turma, Long id){
+    public Aluno(String matricula, String nome, String nivel, String turma, Long id){
         this.matricula = matricula;
         this.nome = nome;
         this.nivel = nivel;
@@ -58,11 +58,11 @@ public class Aluno implements BaseEntity, Serializable {
         this.nome = nome;
     }
 
-    public double getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(double matricula) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 

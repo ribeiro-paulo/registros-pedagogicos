@@ -78,7 +78,8 @@
                             <button class="btn btn-primary" name="acao" type="submit" value="Cadastrar" id="background-blue">
                                 <i class="fa fa-check mr-1"></i>Confirmar</button>
                         </div>
-                    </div>     
+                    </div>    
+                </form>
             </div>
         </div>
     </div>

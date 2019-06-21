@@ -8,6 +8,11 @@
         <servlet-name>CadastrarPedagogaServlet</servlet-name>
         <servlet-class>servlet.CadastrarPedagogaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NovoRegistroServlet</servlet-name>
+        <servlet-class>servlet.NovoRegistroServlet</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -16,6 +21,11 @@
         <servlet-name>CadastrarPedagogaServlet</servlet-name>
         <url-pattern>/CadastrarPedagogaServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NovoRegistroServlet</servlet-name>
+        <url-pattern>/NovoRegistroServlet</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

@@ -100,3 +100,16 @@ h1{
 a{
     color: black;
 }
+
+/* Coloca borda e cor da fonte azul*/
+.btn-outline-primary{
+    border-color: #0F6393;
+    color: #0F6393;
+}
+
+/* Coloca o preencimento como azul quando colocar o mouse em cima*/
+.btn-outline-primary:hover {
+  background-color: #0F6393;
+  color: white;
+  border-color: #0F6393;
+}

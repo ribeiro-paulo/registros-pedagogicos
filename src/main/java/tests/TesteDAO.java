@@ -5,10 +5,13 @@
  */
 package tests;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import model.bean.Aluno;
 import model.bean.Pedagoga;
+import model.bean.Registro;
 import model.dao.AlunoDAO;
 import model.dao.GenericDAO;
 
@@ -33,15 +36,25 @@ public class TesteDAO {
 //        p.setSenha("123");
 //        daoP.saveOrUpdate(p);
 
-        Aluno a = new Aluno();
-        a.setMatricula(111);
-        a.setNivel("Integrado");
-        a.setNome("Júnior");
-        a.setTurma("INF31A");
+//        Aluno a = new Aluno();
+//        a.setMatricula(111);
+//        a.setNivel("Integrado");
+//        a.setNome("Júnior");
+//        a.setTurma("INF31A");
+//        
+//        GenericDAO<Aluno> daoP = new GenericDAO<>();
+//        
+//        daoP.saveOrUpdate(a);
+           
+        Registro r = new Registro();
+        r.setData("12-11-99");
+        r.setMatricula("201711440744");
+        r.setDescricao("muito gado");
+        r.setTipoDeOcorrencia("sexo");
         
-        GenericDAO<Aluno> daoP = new GenericDAO<>();
+        GenericDAO<Registro> dao = new GenericDAO();
+        dao.saveOrUpdate(r);
         
-        daoP.saveOrUpdate(a);
     }
 }
 

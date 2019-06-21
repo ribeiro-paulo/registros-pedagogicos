@@ -49,14 +49,43 @@
                         </a>
                     </li>
                 </ul>
-                <div class="tab-content card mb-5">
+
+                <div class="tab-content card mb-5 border-0">
+                     <%-- Troca a lista de registros pela de cadastro ao clicar em novo registro --%>  
                     <div class="tab-pane fade in show active" id="registro" role="tabpanel">
+                        <div role="tablist">
+                            <nav class="navbar navbar-expand-lg navbar-light" style="border-bottom: 1px #000 solid">
+                                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                        <li class="nav-item active">
+                                            <div class="input-group md-form form-sm form-2 pl-0">
+                                                <input class="form-control my-0 py-1" type="text" placeholder="Buscar registro" aria-label="Search">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
 
-                        <jsp:include page="registro.jsp"/>
+                                    <button href="#novo" data-toggle="tab" role="tab" class="btn btn-outline-primary nav-item">Novo Registro</button>
 
+                                </div>
+                            </nav>
+                        </div> 
+
+                        <div class="tab-content card mb-5 border-0">
+                            <div class="tab-pane fade in show active" id="lista" role="tabpanel">
+                                <jsp:include page="registro.jsp"/>
+                            </div>
+                            
+                            <div class="tab-pane fade tab-content card mb-5 border-0 col-md-11" id="novo" role="tabpanel" style="margin-left: 3%">
+                                <jsp:include page="../cadastro/registro.jsp"/>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="tab-pane fade" id="desempenho" role="tabpanel">
-                            <jsp:include page="desempenho.jsp"/>
+                        <jsp:include page="desempenho.jsp"/>
                     </div>
                 </div>
             </div>

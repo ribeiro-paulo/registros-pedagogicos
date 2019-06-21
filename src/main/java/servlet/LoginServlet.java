@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
                 p = pDao2.findById(Pedagoga.class, idPedagoga);
                 if (p != null) {
                     request.getSession().setAttribute("usuario", p);
-                    response.sendRedirect("/registros_pedagogicos/jsp/home-relatos.jsp");
+                    response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");
                 } else {
                     out.println("ERRO");
                 }

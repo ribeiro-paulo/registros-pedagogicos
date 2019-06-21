@@ -27,14 +27,14 @@ public class Pedagoga implements BaseEntity, Serializable {
     @Column
     private String senha;
     @Column
-    private int siape;
+    private String siape;
     
     
 
     public Pedagoga() {
     }
     
-    public Pedagoga(int siape, String nome, String usuario, String senha, Long id){
+    public Pedagoga(String siape, String nome, String usuario, String senha, Long id){
         this.siape = siape;
         this.nome = nome;
         this.usuario = usuario;
@@ -51,11 +51,11 @@ public class Pedagoga implements BaseEntity, Serializable {
 	this.id = id;
     }    
 
-    public int getSiape() {
+    public String getSiape() {
         return siape;
     }
 
-    public void setSiape(int siape) {
+    public void setSiape(String siape) {
         this.siape = siape;
     }
 
