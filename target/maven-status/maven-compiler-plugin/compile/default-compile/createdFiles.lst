@@ -5,6 +5,7 @@ model\bean\Pedagoga.class
 servlet\CadastrarPedagogaServlet.class
 model\dao\RegistroDAO.class
 servlet\LoginServlet.class
+servlet\NovoRegistroServlet.class
 model\bean\Aluno.class
 model\dao\BaseEntity.class
 model\dao\GenericDAO.class

@@ -46,14 +46,19 @@ public class TesteDAO {
 //        
 //        daoP.saveOrUpdate(a);
            
-        Registro r = new Registro();
-        r.setData("12-11-99");
-        r.setMatricula("201711440744");
-        r.setDescricao("muito gado");
-        r.setTipoDeOcorrencia("sexo");
-        
-        GenericDAO<Registro> dao = new GenericDAO();
-        dao.saveOrUpdate(r);
+//        Registro r = new Registro();
+//        r.setData("12-11-99");
+//        r.setMatricula("201711440744");
+//        r.setDescricao("muito gado");
+//        r.setTipoDeOcorrencia("sexo");
+//        
+//        GenericDAO<Registro> dao = new GenericDAO();
+//        dao.saveOrUpdate(r);
+
+         AlunoDAO dao = new AlunoDAO();
+         
+         
+         System.out.println("resultado: " + dao.getById("1").getNome());
         
     }
 }

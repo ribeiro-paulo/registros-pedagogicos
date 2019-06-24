@@ -7,6 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="model.bean.Aluno"%>
+<%@page import="java.util.List"%>
+<%@page import="model.dao.AlunoDAO"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -51,34 +55,76 @@
                 </ul>
 
                 <div class="tab-content card mb-5 border-0">
-                     <%-- Troca a lista de registros pela de cadastro ao clicar em novo registro --%>  
+                    <%-- Troca a lista de registros pela de cadastro ao clicar em novo registro --%>  
                     <div class="tab-pane fade in show active" id="registro" role="tabpanel">
                         <div role="tablist">
-                            <nav class="navbar navbar-expand-lg navbar-light" style="border-bottom: 1px #000 solid">
-                                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                        <li class="nav-item active">
-                                            <div class="input-group md-form form-sm form-2 pl-0">
-                                                <input class="form-control my-0 py-1" type="text" placeholder="Buscar registro" aria-label="Search">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
-                                                </div>
+
+                            <nav class="navbar navbar-light" style="border-bottom: 1px #000 solid">
+                                <%-- Search --%>  
+                                <div class="input-group col-md-3">
+                                    <input class="form-control my-0 py-1" type="text" placeholder="Buscar registro" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                                
+                                <%-- Novo registro --%>  
+                                <button type="novo-registro" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Novo Registro</button>
+                                <%-- Chama o modal ao clicar em novo registro --%>  
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <ul class="navbar-nav">
+
+                                                    <li class="nav-item">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Selecione um aluno</h5>
+                                                    </li>
+
+                                                    <li class="nav-item end">
+                                                        <div class="input-group md-form form-sm form-0 pl-0">
+                                                            <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
-                                        </li>
-                                    </ul>
-
-                                    <button href="#novo" data-toggle="tab" role="tab" class="btn btn-outline-primary nav-item">Novo Registro</button>
-
+                                            <div class="modal-body">
+                                                <%
+                                                    AlunoDAO alunoDAO = new AlunoDAO();
+                                                    List<Aluno> alunos = alunoDAO.findAll();
+                                                    if (!alunos.isEmpty()) {
+                                                %>                           
+                                                <%  for (Aluno aluno : alunos) {%>
+                                                <div class="list-group">
+                                                    <button type="button" class="list-group-item list-group-item-action"><%=aluno.getNome()%></button>
+                                                </div>
+                                                <%  }
+                                                    }%>
+                                            </div>
+                                            <%-- Chama o novo registro --%> 
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" href="#novo" data-dismiss="modal" data-toggle="tab" role="tab" class="btn btn-primary">Confirmar</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </nav>
                         </div> 
 
                         <div class="tab-content card mb-5 border-0">
                             <div class="tab-pane fade in show active" id="lista" role="tabpanel">
-                                <jsp:include page="registro.jsp"/>
+                                <jsp:include page="listar-registro.jsp"/>
                             </div>
-                            
-                            <div class="tab-pane fade tab-content card mb-5 border-0 col-md-11" id="novo" role="tabpanel" style="margin-left: 3%">
+
+                            <div class="tab-pane fade tab-content card mb-5 border-0" id="novo" role="tabpanel" style="margin-left: 3%; margin-right: 3%">
                                 <jsp:include page="../cadastro/registro.jsp"/>
                             </div>
                         </div>
@@ -90,6 +136,6 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="../footer_absolute.jsp"/>
+        <jsp:include page="../footer.jsp"/>
     </body>
 </html>

@@ -42,4 +42,16 @@ public class AlunoDAO {
         return manager.createQuery("FROM "
                 + Aluno.class.getName()).getResultList();
     }
+
+    public Aluno getById(String matricula) {
+        Query query;
+        Aluno a;
+        
+        query = (Query) manager.createQuery("from Aluno p where p.matricula =:matricula")
+                    .setParameter("usuario", matricula);
+            a = (Aluno) query.getSingleResult();
+        manager.getTransaction().commit();
+        
+        return a;
+    }
 }

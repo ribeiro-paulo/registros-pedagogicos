@@ -24,48 +24,39 @@
 
     <body class="body">
 
-    <nav class="navbar navbar-expand-sm" id="background-blue">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-left" href="#"><img src="imagens/logo.png" width="440" height="60"></a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <button type="button" onclick="location.href = 'cadastro/pedagoga.jsp'" class="btn btn-outline-light"> <i class="fa fa-user-plus mr-1"></i>Registre-se</button>
-                </li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-light" id="background-blue">
+        <a class="navbar-brand" href="#"><img src="imagens/logo.png" width="auto" height="70px"></a>
+        <button type="button" onclick="location.href = 'cadastro/pedagoga.jsp'" class="btn btn-outline-light"> <i class="fa fa-user-plus mr-1"></i>Registre-se</button>
     </nav>
 
+    <div class="container" >
 
-    <div class="container ">
+        <div class="col-md-10 fundo_campos">
 
-        <div class="col-md-6" id="fundo_campos" >
-            <div class="card" id="background-blue">
-                <h1>Dados para login</h1>
+            <div class="title">Dados para login</div>
+
+            <div class="tab-content card mb-5">
+
+                <div class="mt-4 mx-4">
+                    <form action="/registros_pedagogicos/LoginServlet" method="post">
+                        <section>
+                            <div class="form-group">
+                                <label id="label" for="nome">Usuário</label>
+                                <input class="form-control validate" type="text" placeholder="Nome de usuário" id="usuario" name="usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha</label>
+                                <input class="form-control" type="password" placeholder="Senha de usuário" id="senha" name="senha" required>
+                            </div>
+
+                            <div class="form-group col-lg-12 text-right">
+                                <button class="btn btn-primary" type="submit" id="background-blue">Entrar</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
             </div>
-
-            <div class="col-md-12">
-                <form action="/registros_pedagogicos/LoginServlet" method="post" style="margin-top: 5%; ">
-                    <section>
-
-                        <div class="form-group">
-                            <label id="label" for="nome">Usuário</label>
-                            <input class="form-control validate" type="text" placeholder="Nome de usuário" id="usuario" name="usuario" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input class="form-control" type="password" placeholder="Senha de usuário" id="senha" name="senha" required>
-                        </div>
-
-                        <div style="text-align: end">
-                            <input type="submit" value="Entrar" id="btn-login" class="btn-primary">
-                        </div>
-                    </section>
-                </form>
-            </div>
-        </div>
+        </div> 
     </div>
     <jsp:include page="footer_absolute.jsp"/>
 </body>
