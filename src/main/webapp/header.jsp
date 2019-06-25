@@ -6,16 +6,90 @@
         <div class="navbar-header">
             <a class="navbar-left" href="../jsp/home.jsp"><img src="../imagens/logo.png" width="440" height="60"></a>
         </div> 
-        <ul class="nav navbar-nav navbar-right">
-            <div class="btn-group">
-                <button type="button" class="btn btn-outline-light   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user fa-lg"></i> <c:out value="${usuario.nome}"></c:out>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button"><i class="fas fa-id-card fa-lg"></i> Meus dados</button>
-                    <button class="dropdown-item" type="button"><i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</button>
+        <ul class="nav justify-content-end text-light">
+            <li class="nav-item">
+
+                <%-- Modal do Perfil --%>
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModa" style="color: white" href="#"><i class="fas fa-user-edit fa-lg"></i> Editar Perfil</a>
+                <div class="modal fade" style="color: black" id="exampleModa" tabindex="-1" role="dialog" aria-labelledby="exampleModaLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title text-center" >Meu Perfil</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>   
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-warning" role="alert">
+                                    <strong>Atenção!</strong> Ao clicar em ALTERAR os dados serão salvos em sua conta.
+                                </div>
+                                <form method="post" name="atualizar-dados" action="#">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="nome">Nome</label>
+                                            <input class="form-control" type="text" placeholder="Nome completo" id="nome" name="nome" required value=<c:out value="${usuario.nome}"></c:out>>                                        
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="siape">SIAPE</label>
+                                                <input class="form-control" type="text" placeholder="SIAPE" id="usuario" name="siape" maxlength="12" required value=<c:out value="${usuario.siape}"></c:out>>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="usuario">Usuário</label>
+                                                <input class="form-control" type="text" placeholder="Nome de usuário" name="usuario" id="usuario" maxlength="40"  readonly="true" value=<c:out value="${usuario.usuario}"></c:out>>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                            <button type="submit" class="btn btn-primary">Alterar</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                <%-- Modal de sair da conta --%>
+                <a class="nav-link" style="color: white" href="#" data-toggle="modal" data-target="#ModalSair"><i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</a>
+
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" style="color: black"  id="ModalSair" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="TituloModalCentralizado">Encerrar sessão</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Atenção!</strong> Deseja mesmo encerrar a sessão da sua conta?
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Não</button>
+
+                                <form action="/registros_pedagogicos/LoginServlet" method="get">
+                                    <button type="submit" class="btn btn-danger">Sim</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </li>
         </ul>
     </div>
 </nav>

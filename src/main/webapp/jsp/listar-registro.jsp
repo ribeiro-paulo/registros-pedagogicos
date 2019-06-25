@@ -34,17 +34,7 @@
             <!-- Lista de relatos -->
 
             <div class="row">
-                <%
-                    RegistroDAO registroDAO = new RegistroDAO();
-                    List<Registro> registros = registroDAO.findAll();
-                    if (!registros.isEmpty()) {
-                %>                           
-                <%  for (Registro registro : registros) {%>
-                <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action"><%=registro.getNome()%></button>
-                </div>
-                <%  }
-                                                    }%>
+                
             </div>
 
 

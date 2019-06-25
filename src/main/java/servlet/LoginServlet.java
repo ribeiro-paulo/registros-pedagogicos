@@ -25,9 +25,9 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        doPost(request, response);
-
+        request.getSession().setAttribute("usuario", null);
+        request.getSession().setAttribute("entidade", null);
+        response.sendRedirect("/registros_pedagogicos/index.jsp");
     }
 
     @Override

@@ -7,6 +7,15 @@ and open the template in the editor.
     Created on : 14/05/2019, 04:18:06
     Author     : Aluno
 */
+.perfil{
+    background-color: lightgray;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.modal-formato{
+    color: black;
+}
 .div-center{
     background-color: white;
     padding:20px;
@@ -23,7 +32,7 @@ and open the template in the editor.
     font-weight: bold;
     text-align: center;
     padding: 1%;
-    
+
 }
 
 .body-home{
@@ -35,7 +44,7 @@ and open the template in the editor.
     font-weight: bolder
 }
 .navbar navbar-light{
-   
+
 }
 .container-fundo{
     background: white; 
@@ -70,7 +79,7 @@ h1{
 }
 
 .fundo_campos{
-    
+
     margin-top: 10%;
     margin-left: 8%;
 }
@@ -100,7 +109,7 @@ h1{
     border-radius: 5px;
     border-color: black;
     border: ridge;
-    
+
 }
 
 #borda{ 
@@ -121,7 +130,7 @@ a{
 
 /* Coloca o preencimento como azul quando colocar o mouse em cima*/
 .btn-outline-primary:hover {
-  background-color: #0F6393;
-  color: white;
-  border-color: #0F6393;
+    background-color: #0F6393;
+    color: white;
+    border-color: #0F6393;
 }
