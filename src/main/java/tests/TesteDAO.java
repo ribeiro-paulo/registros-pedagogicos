@@ -14,6 +14,7 @@ import model.bean.Pedagoga;
 import model.bean.Registro;
 import model.dao.AlunoDAO;
 import model.dao.GenericDAO;
+import model.dao.RegistroDAO;
 
 /**
  *
@@ -54,12 +55,13 @@ public class TesteDAO {
 //        
 //        GenericDAO<Registro> dao = new GenericDAO();
 //        dao.saveOrUpdate(r);
-
-         AlunoDAO dao = new AlunoDAO();
-         
-         
-         System.out.println("resultado: " + dao.getById("1").getNome());
-        
+        AlunoDAO dao = new AlunoDAO();
+          List<Aluno> resultado = dao.alunosComRegistro();
+          
+          for(int i = 0; i < resultado.size(); i++){
+              System.out.println(resultado.get(i).getNome());
+          }
+          
     }
 }
 

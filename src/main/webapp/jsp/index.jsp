@@ -67,7 +67,7 @@
                                         <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
-                                
+
                                 <%-- Novo registro --%>  
                                 <button type="novo-registro" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Novo Registro</button>
                                 <%-- Chama o modal ao clicar em novo registro --%>  
@@ -123,13 +123,11 @@
                             <div class="tab-pane fade in show active" id="lista" role="tabpanel">
                                 <jsp:include page="listar-registro.jsp"/>
                             </div>
-
-                            <div class="tab-pane fade tab-content card mb-5 border-0" id="novo" role="tabpanel" style="margin-left: 3%; margin-right: 3%">
-                                <jsp:include page="../cadastro/registro.jsp"/>
-                            </div>
                         </div>
                     </div>
-
+                    <div class="tab-pane fade tab-content card mb-5 border-0" id="novo" role="tabpanel" style="margin-left: 3%; margin-right: 3%">
+                        <jsp:include page="../cadastro/registro.jsp"/>
+                    </div>       
                     <div class="tab-pane fade" id="desempenho" role="tabpanel">
                         <jsp:include page="desempenho.jsp"/>
                     </div>

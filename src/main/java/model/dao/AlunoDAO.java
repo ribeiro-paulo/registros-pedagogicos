@@ -1,12 +1,15 @@
 package model.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import model.bean.Aluno;
 import model.bean.Pedagoga;
+import model.bean.Registro;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import util.ConnectionFactory;
+import util.HibernateUtil;
 
 /**
  *
@@ -43,15 +46,22 @@ public class AlunoDAO {
                 + Aluno.class.getName()).getResultList();
     }
 
-    public Aluno getById(String matricula) {
-        Query query;
-        Aluno a;
+    public List<Aluno> alunosComRegistro() {
         
-        query = (Query) manager.createQuery("from Aluno p where p.matricula =:matricula")
-                    .setParameter("usuario", matricula);
-            a = (Aluno) query.getSingleResult();
-        manager.getTransaction().commit();
+        RegistroDAO r = new RegistroDAO();
+
+        List<Aluno> lA = findAll();
+        List<Registro> lR = r.findAll();
+        List<Aluno> resultado = new ArrayList();
+
+        for (int i = 0; i < lR.size(); i++) {
+            for (int j = 0; j < lA.size(); j++) {
+                if (lA.get(j).getMatricula().equals(lR.get(i).getMatricula())) {
+                    resultado.add(lA.get(j));
+                }
+            }
+        }
         
-        return a;
+        return resultado;
     }
 }

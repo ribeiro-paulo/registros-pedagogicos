@@ -3,8 +3,10 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <body>
-    <h2>Novo registro</h2>
+
     <form method="post" name="dados_cadastro" action="/registros_pedagogicos/NovoRegistroServlet">
+
+        <h3>Novo registro</h3>
 
         <div class="form-row">
             <div class="form-group col-md-12">
@@ -53,12 +55,12 @@
             </div>
 
             <div class="form-group col-md-6">
-                
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Selecionar anexo</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
-             
+
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Selecionar anexo</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
             </div>
         </div>
 

@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 14/05/2019, 04:18:06
     Author     : Aluno
 */
+.icon-blue{
+    color: #0F6393;
+}
 .perfil{
     background-color: lightgray;
     border-radius:50%;

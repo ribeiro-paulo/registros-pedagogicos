@@ -7,6 +7,7 @@ model\dao\RegistroDAO.class
 servlet\LoginServlet.class
 servlet\NovoRegistroServlet.class
 model\bean\Aluno.class
+util\HibernateUtil.class
 model\dao\BaseEntity.class
 model\dao\GenericDAO.class
 tests\AdicionarAlunos.class

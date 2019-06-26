@@ -1,43 +1,34 @@
-<%-- 
-    Document   : registros
-    Created on : 18/06/2019, 13:45:46
-    Author     : Junior
---%>
-
-<%@page import="model.bean.Registro"%>
+<%@page import="model.bean.Aluno"%>
+<%@page import="model.dao.AlunoDAO"%>
 <%@page import="java.util.List"%>
-<%@page import="model.dao.RegistroDAO"%>
 
-<body>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Nome </th>
 
-    <div>
-        <div style="margin-left: 2%; margin-right: 2%; margin-bottom: 5%">
+            <th>Nível</th>
+            <th>Turma</th>
+            <th>Data</th>
+            <th>Opções</th>
+        </tr>
+    </thead>
+    <%
+        AlunoDAO dao = new AlunoDAO();
+        List<Aluno> resultado = dao.alunosComRegistro();
 
-            <div class="row">
-                <div class="col-md-3">
-                    Nome
-                </div>
-
-                <div class="col-md-3">
-                    Nível
-                </div>
-
-                <div class="col-md-3">
-                    Curso
-                </div>
-
-                <div class="col-md-3">
-                    Data
-                </div>
-            </div>
-
-            <!-- Lista de relatos -->
-
-            <div class="row">
-                
-            </div>
-
-
-        </div>
-    </div>
-</body>
+        for (int i = 0; i < resultado.size(); i++) {%>
+    <tbody>
+        <tr>
+            <td><%=resultado.get(i).getNome()%></td>
+            <td><%=resultado.get(i).getNivel()%></td>
+            <td><%=resultado.get(i).getTurma()%></td>
+            <td>--</td>
+            <td>
+                <a href="#" class="icon-blue"><i class="fas fa-edit fa-lg"></i></a>
+                <a href="#" class="icon-blue"><i class="fas fa-trash fa-lg"></i></a>
+            </td>
+        </tr>
+    </tbody>
+    <% }%>
+</table>   
