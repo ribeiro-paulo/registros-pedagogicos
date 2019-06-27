@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 14/05/2019, 04:18:06
     Author     : Aluno
 */
+.link{
+    color: #2e85c1;
+}
 .icon-blue{
     color: #0F6393;
 }
@@ -84,7 +87,7 @@ h1{
 .fundo_campos{
 
     margin-top: 10%;
-    margin-left: 8%;
+    margin-left: 16%;
 }
 
 .nav-tabs .nav-link{

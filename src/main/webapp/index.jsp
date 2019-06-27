@@ -31,7 +31,7 @@
 
     <div class="container" >
 
-        <div class="col-md-10 fundo_campos">
+        <div class="col-md-8 fundo_campos">
 
             <div class="title">Dados para login</div>
 
@@ -49,8 +49,13 @@
                                 <input class="form-control" type="password" placeholder="Senha de usuário" id="senha" name="senha" required>
                             </div>
 
-                            <div class="form-group col-lg-12 text-right">
-                                <button class="btn btn-primary" type="submit" id="background-blue">Entrar</button>
+                            <div class="form-group col-lg-12 text-center">
+                                <button class="btn btn-primary btn-lg btn-block" type="submit" id="background-blue">Entrar</button>
+                            </div>
+                            
+                            <div class="text-center">
+                                <label>Ainda não possui cadasto?</label>
+                                <a class="link" href="cadastro/pedagoga.jsp"><b class="icon-blue">Registre-se agora</b></a>
                             </div>
                         </section>
                     </form>

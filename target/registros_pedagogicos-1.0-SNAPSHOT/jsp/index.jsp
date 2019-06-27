@@ -29,6 +29,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
 
     </head>
 
@@ -69,10 +70,10 @@
                                 </div>
 
                                 <%-- Novo registro --%>  
-                                <button type="novo-registro" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Novo Registro</button>
+                                <button class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Novo registro</button>
                                 <%-- Chama o modal ao clicar em novo registro --%>  
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <ul class="navbar-nav">
@@ -96,24 +97,14 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <%
-                                                    AlunoDAO alunoDAO = new AlunoDAO();
-                                                    List<Aluno> alunos = alunoDAO.findAll();
-                                                    if (!alunos.isEmpty()) {
-                                                %>                           
-                                                <%  for (Aluno aluno : alunos) {%>
-                                                <div class="list-group">
-                                                    <button type="button" class="list-group-item list-group-item-action"><%=aluno.getNome()%></button>
-                                                </div>
-                                                <%  }
-                                                    }%>
+                                                <jsp:include page="listar-alunos.jsp"/>
                                             </div>
                                             <%-- Chama o novo registro --%> 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                                 <button type="button" href="#novo" data-dismiss="modal" data-toggle="tab" role="tab" class="btn btn-primary">Confirmar</button>
                                             </div>
-                                        </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </nav>

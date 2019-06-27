@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
         Pedagoga p;
 
         if (idPedagoga == null) {
-            out.println("NULL");
+            response.sendRedirect("/registros_pedagogicos/erros/login.jsp");
         } else if (idPedagoga == -1) {
             out.println("-1");
         } else {
