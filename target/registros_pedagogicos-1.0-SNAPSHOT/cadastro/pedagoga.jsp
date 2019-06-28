@@ -23,22 +23,16 @@
     </head>
 
     <body class="body">
+
     <nav class="navbar navbar-light" id="background-blue">
         <a class="navbar-brand" href="#"><img src="../imagens/logo.png" width="auto" height="70px"></a>
-        <button type="button" onclick="location.href = '../index.jsp'"class="btn btn-outline-light"> <i class="fa fa-chevron-circle-left mr-1"></i> Voltar</button>
     </nav>
-    
     <div class="container">
-
-        <div class="col-md-10 fundo_campos">
-
-            <div class="title">Dados para cadastro</div>
-
-            <div class="tab-content card mb-5">
-
-                <div class="mt-4 mx-4">
-
-                    <div class="col-md-12" id="fundo_campos">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="title">Dados para cadastro</div>
+                <div class="tab-content card mb-5">
+                    <div class="mt-4 mx-4">
                         <form method="post" name="dados_cadastro" action="/registros_pedagogicos/CadastrarPedagogaServlet">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
@@ -67,17 +61,26 @@
                                     <input class="form-control" type="password" placeholder="Confirmar senha" id="confirmar_senha" name="confirmar_senha" maxlength="128">
                                 </div>
 
-                                <div class="form-group col-sm-12 col-lg-12 text-right">
+
+                            </div> 
+
+                            <div class="form-row">
+                                <div class="form-group col-sm-12 col-lg-6 text-left">
+                                    <button class="btn btn-dark" name="acao" value="Cadastrar" id="background-blue">
+                                        <i class="fa fa-times mr-1"></i>Cancelar</button>
+                                </div>
+                                <div class="form-group col-sm-12 col-lg-6 text-right">
                                     <button class="btn btn-primary" name="acao" type="submit" value="Cadastrar" id="background-blue">
                                         <i class="fa fa-check mr-1"></i>Confirmar</button>
                                 </div>
-                            </div>    
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
-    <jsp:include page="../footer_absolute.jsp"/>
+    <jsp:include page="../footer.jsp"/>
 </body>
 </html>
+
