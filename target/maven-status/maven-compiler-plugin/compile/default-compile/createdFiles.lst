@@ -10,6 +10,7 @@ model\bean\Aluno.class
 util\HibernateUtil.class
 model\dao\BaseEntity.class
 model\dao\GenericDAO.class
+servlet\AlterarPedagogaServlet.class
 tests\AdicionarAlunos.class
 model\dao\PedagogaDAO.class
 tests\TesteDAO.class

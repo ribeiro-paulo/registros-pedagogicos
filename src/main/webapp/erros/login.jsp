@@ -26,42 +26,42 @@
 
     <nav class="navbar navbar-light" id="background-blue">
         <a class="navbar-brand" href="#"><img src="../imagens/logo.png" width="auto" height="70px"></a>
-        <button type="button" onclick="location.href = '../cadastro/pedagoga.jsp'" class="btn btn-outline-light"> <i class="fa fa-user-plus mr-1"></i>Registre-se</button>
     </nav>
 
-    <div class="container" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="title">Dados para login</div>
+                <div class="tab-content card mb-5">
+                    <div class="mt-4 mx-4">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Usuário</strong> ou <strong>senha</strong> inválidos, tente novamente!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="/registros_pedagogicos/LoginServlet" method="post">
+                            <section>
+                                <div class="form-group">
+                                    <label id="label" for="nome">Usuário</label>
+                                    <input class="form-control validate" type="text" placeholder="Nome de usuário" id="usuario" name="usuario" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="senha">Senha</label>
+                                    <input class="form-control" type="password" placeholder="Senha de usuário" id="senha" name="senha" required>
+                                </div>
 
-        <div class="col-md-10 fundo_campos">
+                                <div class="form-group col-lg-12 text-center">
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit" id="background-blue">Entrar</button>
+                                </div>
 
-            <div class="title">Dados para login</div>
-
-            <div class="tab-content card mb-5">
-
-                <div class="mt-4 mx-4">
-                    
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Usuário</strong> ou <strong>senha</strong> inválidos, tente novamente!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                                <div class="text-center">
+                                    <label>Ainda não possui cadasto?</label>
+                                    <a class="link" href="../cadastro/pedagoga.jsp"><b class="icon-blue">Registre-se agora</b></a>
+                                </div>
+                            </section>
+                        </form>
                     </div>
-                    
-                    <form action="/registros_pedagogicos/LoginServlet" method="post">
-                        <section>
-                            <div class="form-group">
-                                <label id="label" for="nome">Usuário</label>
-                                <input class="form-control validate" type="text" placeholder="Nome de usuário" id="usuario" name="usuario" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha</label>
-                                <input class="form-control" type="password" placeholder="Senha de usuário" id="senha" name="senha" required>
-                            </div>
-
-                            <div class="form-group col-lg-12 text-right">
-                                <button class="btn btn-primary" type="submit" id="background-blue">Entrar</button>
-                            </div>
-                        </section>
-                    </form>
                 </div>
             </div>
         </div> 

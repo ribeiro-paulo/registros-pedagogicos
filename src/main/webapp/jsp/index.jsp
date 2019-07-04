@@ -126,5 +126,21 @@
             </div>
         </div>
         <jsp:include page="../footer.jsp"/>
+        <script>
+            function enviarDados(nome, nivel, turma, matricula) {
+                var inputNome = document.getElementById("discente");
+                inputNome.value = nome;
+                
+                var inputNivel = document.getElementById("nivel");
+                inputNivel.value = nivel;
+                
+                var inputTurma = document.getElementById("turma");
+                inputTurma.value = turma;
+                
+                var inputMatricula = document.getElementById("matricula");
+                inputMatricula.value = matricula;
+            }
+
+        </script>
     </body>
 </html>
