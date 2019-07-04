@@ -12,7 +12,10 @@
         <servlet-name>NovoRegistroServlet</servlet-name>
         <servlet-class>servlet.NovoRegistroServlet</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>AlterarPedagogaServlet</servlet-name>
+        <servlet-class>servlet.AlterarPedagogaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -25,7 +28,10 @@
         <servlet-name>NovoRegistroServlet</servlet-name>
         <url-pattern>/NovoRegistroServlet</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>AlterarPedagogaServlet</servlet-name>
+        <url-pattern>/AlterarPedagogaServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

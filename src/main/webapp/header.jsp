@@ -24,21 +24,21 @@
                                 <div class="alert alert-warning" role="alert">
                                     <strong>Atenção!</strong> Ao clicar em ALTERAR os dados serão salvos em sua conta.
                                 </div>
-                                <form method="post" name="atualizar-dados" action="#">
+                                <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
                                             <label for="nome">Nome</label>
-                                            <input class="form-control" type="text" placeholder="Nome completo" id="nome" name="nome" required value=<c:out value="${usuario.nome}"></c:out>>                                        
+                                            <input class="form-control" type="text" placeholder="Nome completo" id="nome" name="nome" required value="<c:out value="${usuario.nome}"></c:out>"/>                                        
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="siape">SIAPE</label>
-                                                <input class="form-control" type="text" placeholder="SIAPE" id="usuario" name="siape" maxlength="12" required value=<c:out value="${usuario.siape}"></c:out>>
+                                                <input class="form-control" type="text" placeholder="SIAPE" id="usuario" name="siape" maxlength="12" required value="<c:out value="${usuario.siape}"></c:out>"/>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="usuario">Usuário</label>
-                                                <input class="form-control" type="text" placeholder="Nome de usuário" name="usuario" id="usuario" maxlength="40"  readonly="true" value=<c:out value="${usuario.usuario}"></c:out>>
+                                                <input class="form-control" type="text" placeholder="Nome de usuário" name="usuario" id="usuario" maxlength="40" readonly value="<c:out value="${usuario.usuario}"></c:out>"/>
                                             </div>
 
                                         </div>
