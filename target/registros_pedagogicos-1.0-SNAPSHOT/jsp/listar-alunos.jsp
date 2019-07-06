@@ -22,7 +22,7 @@
         <tr>
             <td>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked onclick="enviarDados('<%=alunos.get(i).getNome()%>', '<%=alunos.get(i).getNivel()%>', '<%=alunos.get(i).getTurma()%>', '<%=alunos.get(i).getMatricula()%>')" >
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"  onclick="enviarDados('<%=alunos.get(i).getNome()%>', '<%=alunos.get(i).getNivel()%>', '<%=alunos.get(i).getTurma()%>', '<%=alunos.get(i).getMatricula()%>')" >
                 </div>
             </td>
             <td><%=alunos.get(i).getNome()%></td>
