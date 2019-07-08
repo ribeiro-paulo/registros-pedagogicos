@@ -5,40 +5,40 @@
 <body>
 
     <form method="post" name="dados_cadastro" action="/registros_pedagogicos/NovoRegistroServlet">
-
+        <br>
         <h3>Novo registro</h3>
-
+        <br>
+        <h5 class="border-bottom border-dark"></h5>
+        <br>
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="discente">Discente</label>
-                <input class="form-control" type="text" id="discente" name="discente" maxlength="12" placeholder="Nome do discente" >
+                <input class="form-control" type="text" id="discente" name="discente" maxlength="12" placeholder="Nome do discente" readonly>
             </div>
         </div>
         <div class="form-row">
 
             <div class="form-group col-md-4">
-                <label for="nivel">Nível</label>
-                <select class="form-control col-md-12">
-                    <option>Integrado</option>
-                    <option>Subsequente</option>
-                    <option>Graduação</option>
-                    <option>Pós-granduação</option>
-                </select>
+                <label for="nivel">Nivel</label>
+                <input class="form-control" type="text" id="nivel" name="nivel" placeholder="nivel" readonly>
             </div>
+
             <div class="form-group col-md-4">
-                <label for="curso">Curso</label>
-                <select class="form-control col-md-12">
-                    <option>Informática</option>
-                    <option>Química</option>
-                    <option>Edificações</option>
-                </select>
+                <label for="turma">Turma</label>
+                <input class="form-control" type="text" id="turma" name="turma" placeholder="Turma" readonly>
             </div>
 
             <div class="form-group col-md-4">
                 <label for="matricula">Matrícula</label>
-                <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" >
+                <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" readonly>
             </div>
+        </div>
 
+        <br>
+        <h5 class="border-bottom border-dark"></h5>
+        <br>
+
+        <div class="form-row">  
             <div class="form-group col-md-6">
                 <label for="data">Data</label>
                 <input class="form-control" type="date"id="data" name="data">                                        

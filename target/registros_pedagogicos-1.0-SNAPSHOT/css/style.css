@@ -7,6 +7,23 @@ and open the template in the editor.
     Created on : 14/05/2019, 04:18:06
     Author     : Aluno
 */
+
+.text-black{
+    color: black;
+}
+
+#codexpl th, #codexpl td {
+    padding:0.8em;
+    border: 1px solid;
+}
+#codexpl th {
+    background-color:#6699FF;
+    font-weight:bold;
+}
+.colorir {
+    background-color:#fcc;
+}
+
 .link{
     color: #2e85c1;
 }

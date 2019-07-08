@@ -27,7 +27,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-
+                        3621-6717 (DAIC)
                     </li>
                     <li>
 
@@ -66,7 +66,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <p> A DAIC-relatos é uma ferramenta automatizada para a organização relatos pedagógicos</p>
+                        <p> A Registros Pedagógicos é uma ferramenta automatizada que visa uma forma mais organizada auxiliar os registros pedagógicos.</p>
                     </li>
                     </li>
                 </ul>
@@ -77,7 +77,7 @@
     </div>
     <!-- Footer Links -->
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright: Fábrica de softwares
+    <div class="footer-copyright text-center py-3">© 2019 Copyright: Registros Pedagógicos
     </div>
     <!-- Copyright -->
 

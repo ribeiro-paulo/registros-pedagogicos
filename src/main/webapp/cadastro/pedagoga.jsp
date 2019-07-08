@@ -66,9 +66,10 @@
 
                             <div class="form-row">
                                 <div class="form-group col-sm-12 col-lg-6 text-left">
-                                    <button class="btn btn-dark" name="acao" value="Cadastrar" id="background-blue">
+                                    <button class="btn btn-secondary" name="acao" onClick="window.open('../index.jsp')" value="Cadastrar">
                                         <i class="fa fa-times mr-1"></i>Cancelar</button>
                                 </div>
+                                
                                 <div class="form-group col-sm-12 col-lg-6 text-right">
                                     <button class="btn btn-primary" name="acao" type="submit" value="Cadastrar" id="background-blue">
                                         <i class="fa fa-check mr-1"></i>Confirmar</button>
