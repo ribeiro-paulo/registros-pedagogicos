@@ -1,6 +1,9 @@
 <%@page import="model.bean.Aluno"%>
 <%@page import="model.dao.AlunoDAO"%>
 <%@page import="java.util.List"%>
+<%@page import="model.bean.Registro"%>
+<%@page import="model.dao.RegistroDAO"%>
+
 
 <table class="table table-striped table-hover">
     <thead>
@@ -78,6 +81,7 @@
                 <div class="row col-12">
                     <textarea class="form-control" rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"></textarea>
                 </div>
+<<<<<<< HEAD
                 <br>
                 <div class="card col-2 text-center border-bottom-0">
                     22/12/2019
@@ -85,6 +89,8 @@
                 <div class="row col-12">
                     <textarea class="form-control" rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"></textarea>
                 </div>
+=======
+>>>>>>> eaa54f926a83e2ee1746f60d08314c03e73172ff
             </div>
 
             <%--  --%> 
