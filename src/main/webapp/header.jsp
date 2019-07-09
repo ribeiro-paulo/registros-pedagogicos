@@ -60,11 +60,7 @@
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-<<<<<<< HEAD
-                                                <button type="submit" class="btn btn-primary">Alterar</button>
-=======
                                                 <button type="submit" name="acao" value="alterarUsuario" class="btn btn-primary">Alterar</button>
->>>>>>> eaa54f926a83e2ee1746f60d08314c03e73172ff
                                             </div>
 
                                         </form>
@@ -74,11 +70,7 @@
                                         <div class="alert alert-danger" role="alert">
                                             <strong>Atenção!</strong> Ao clicar em ALTERAR a sua nova senha será salva em sua conta.
                                         </div>
-<<<<<<< HEAD
-                                        <form method="post" name="atualizar-dados" autocomplete="off" action="#">
-=======
                                         <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
->>>>>>> eaa54f926a83e2ee1746f60d08314c03e73172ff
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="senhaAtual">Senha atual</label>
@@ -99,11 +91,7 @@
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-<<<<<<< HEAD
-                                                <button type="submit" class="btn btn-primary">Alterar</button>
-=======
                                                 <button type="submit" name="acao" value="alterarSenha" class="btn btn-primary">Alterar</button>
->>>>>>> eaa54f926a83e2ee1746f60d08314c03e73172ff
                                             </div>
 
                                         </form>
