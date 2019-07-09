@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 model\bean\Registro.class
 util\ConnectionFactory.class
 model\dao\AlunoDAO.class
@@ -14,3 +15,5 @@ servlet\AlterarPedagogaServlet.class
 tests\AdicionarAlunos.class
 model\dao\PedagogaDAO.class
 tests\TesteDAO.class
+=======
+>>>>>>> eaa54f926a83e2ee1746f60d08314c03e73172ff

@@ -30,7 +30,6 @@ public class Pedagoga implements BaseEntity, Serializable {
     private String siape;
     
     
-
     public Pedagoga() {
     }
     

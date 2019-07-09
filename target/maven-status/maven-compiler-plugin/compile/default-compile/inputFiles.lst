@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\model\dao\PedagogaDAO.java
 C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\servlet\LoginServlet.java
 C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\tests\TesteDAO.java
@@ -14,3 +15,21 @@ C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\model\bean\R
 C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\servlet\CadastrarPedagogaServlet.java
 C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\model\dao\AlunoDAO.java
 C:\Users\ribei\Desktop\projetos\registros-pedagogicos\src\main\java\model\bean\Aluno.java
+=======
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/GenericDAO.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/tests/TesteDAO.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/util/ConnectionFactory.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/PedagogaDAO.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/tests/AdicionarAlunos.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/servlet/CadastrarPedagogaServlet.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/servlet/LoginServlet.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/bean/Aluno.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/bean/Registro.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/bean/Pedagoga.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/AlunoDAO.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/BaseEntity.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/servlet/NovoRegistroServlet.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/util/HibernateUtil.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/RegistroDAO.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/servlet/AlterarPedagogaServlet.java
+>>>>>>> eaa54f926a83e2ee1746f60d08314c03e73172ff
