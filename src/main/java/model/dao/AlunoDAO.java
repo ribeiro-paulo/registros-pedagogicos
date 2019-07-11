@@ -17,9 +17,8 @@ import util.HibernateUtil;
  */
 public class AlunoDAO {
 
-    private static EntityManager manager = ConnectionFactory.getEntityManager();
-
     public Long login(String usuario, String senha) {
+        EntityManager manager = ConnectionFactory.getEntityManager();
         Query query;
         Pedagoga p;
         try {
@@ -42,6 +41,7 @@ public class AlunoDAO {
     }
 
     public List<Aluno> findAll() {
+        EntityManager manager = ConnectionFactory.getEntityManager();
         return manager.createQuery("FROM "
                 + Aluno.class.getName()).getResultList();
     }

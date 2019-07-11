@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Pedagoga;
 import model.dao.GenericDAO;
-import model.dao.PedagogaDAO;
 
 /**
  *
@@ -16,50 +15,54 @@ import model.dao.PedagogaDAO;
  */
 public class AlterarPedagogaServlet extends HttpServlet {
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-		PrintWriter out = response.getWriter();
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		String acao = request.getParameter("acao");
+        PrintWriter out = response.getWriter();
 
-		Pedagoga p;
-		p = (Pedagoga) request.getSession().getAttribute("usuario");
+        String acao = request.getParameter("acao");
 
-		if (acao.equals("alterarUsuario")) {
+        Pedagoga p;
+        p = (Pedagoga) request.getSession().getAttribute("usuario");
 
-			String nome = request.getParameter("nome");
-			String siape = request.getParameter("siape");
-			String usuario = request.getParameter("usuario");
+        if (acao.equals("alterarUsuario")) {
 
-			p.setNome(nome);
-			p.setSiape(siape);
-			p.setUsuario(usuario);
+            String nome = request.getParameter("nome");
+            String siape = request.getParameter("siape");
+            String usuario = request.getParameter("usuario");
 
-		}
+            p.setNome(nome);
+            p.setSiape(siape);
+            p.setUsuario(usuario);
 
-		if (acao.equals("alterarSenha")) {
+            GenericDAO<Pedagoga> daoP = new GenericDAO<>();
+            daoP.saveOrUpdate(p);
 
-			String senhaAtual = request.getParameter("senhaAtual");
-			String novaSenha = request.getParameter("novaSenha");
-			String confirmNovaSenha = request.getParameter("confirmNovaSenha");
-			
-			PedagogaDAO pDAO = null;
-			
-			if (novaSenha.equals(confirmNovaSenha)) {
-				p.setSenha(novaSenha);
-			} else {
-				out.println("Digite as senhas corretamente!");
-			}
+            response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
 
-		}
+        }
 
-		GenericDAO<Pedagoga> daoP = new GenericDAO<>();
-		daoP.saveOrUpdate(p);
+        if (acao.equals("alterarSenha")) {
 
-		response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
+            String senhaAtual = request.getParameter("senhaAtual");
+            String novaSenha = request.getParameter("novaSenha");
+            String confirmNovaSenha = request.getParameter("confirmNovaSenha");
 
-	}
+            if (novaSenha.equals(confirmNovaSenha) && senhaAtual.equals(p.getSenha())) {
+
+                p.setSenha(novaSenha);
+                
+                GenericDAO<Pedagoga> daoP = new GenericDAO<>();
+                daoP.saveOrUpdate(p);
+
+                response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
+            } else {
+                out.println("Digite as senhas corretamente!");
+            }
+
+        }
+
+    }
 
 }

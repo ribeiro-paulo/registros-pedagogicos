@@ -16,9 +16,10 @@ import util.ConnectionFactory;
  */
 public class RegistroDAO {
     
-    private static EntityManager manager = ConnectionFactory.getEntityManager();
-    
     public List<Registro> findAll() {
+        
+        EntityManager manager = ConnectionFactory.getEntityManager();
+        
         return manager.createQuery("FROM "
                 + Registro.class.getName()).getResultList();
     }
