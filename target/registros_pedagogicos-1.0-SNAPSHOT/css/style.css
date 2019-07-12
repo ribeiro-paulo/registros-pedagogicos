@@ -8,6 +8,14 @@ and open the template in the editor.
     Author     : Aluno
 */
 
+.text-bold{
+    font-weight: bold;
+}
+
+.text-blue{
+    color: #0F6393;
+}
+
 .text-black{
     color: black;
 }

@@ -129,6 +129,10 @@
         <script>
             
             function enviarRegistro(nome, nivel, turma, matricula) {
+                
+                $('#nomeDoAluno').text(nome);
+                $('#nomeExcluirAluno').text(nome);
+                
                 var inputNome = document.getElementById("listarDiscente");
                 inputNome.value = nome;
                 

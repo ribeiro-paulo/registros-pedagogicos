@@ -1,13 +1,13 @@
 util/ConnectionFactory.class
 servlet/NovoRegistroServlet.class
 tests/AdicionarAlunos.class
-model/dao/AlunoDAO.class
-model/bean/Aluno.class
 servlet/CadastrarPedagogaServlet.class
+model/bean/Aluno.class
+model/dao/AlunoDAO.class
 model/bean/Registro.class
-model/dao/BaseEntity.class
-model/bean/Pedagoga.class
 servlet/LoginServlet.class
+model/bean/Pedagoga.class
+model/dao/BaseEntity.class
 util/HibernateUtil.class
 model/dao/PedagogaDAO.class
 model/dao/GenericDAO.class

@@ -12,7 +12,6 @@
             <th>Nível</th>
             <th>Turma</th>
             <th>Data</th>
-            <th>Opções</th>
         </tr>
     </thead>
     <%
@@ -26,10 +25,6 @@
             <td><%=resultado.get(i).getNivel()%></td>
             <td><%=resultado.get(i).getTurma()%></td>
             <td>--</td>
-            <td>
-                <a href="#" class="icon-blue"><i class="fas fa-edit fa-lg"></i></a>
-                <a href="#" class="icon-blue"><i class="fas fa-trash fa-lg"></i></a>
-            </td>
         </tr>
     </tbody>
     <% }%>
@@ -43,7 +38,9 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <h5 class="modal-title">Nome do aluno (ainda não consegui colocar aqui)</h5>
+                        <h3>
+                            Ficha de <a  id="nomeDoAluno" class="text-bold">Aluno não encontrado</a>
+                        </h3>
                     </li>
                 </ul>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
@@ -74,21 +71,88 @@
                         <input class="form-control" type="text" id="listarMatricula" name="listarMatricula" placeholder="Matrícula do discente" readonly>
                     </div>
                 </div>
-                
-                <div class="card col-2 text-center border-bottom-0">
-                    12/11/2019
+
+                <h1 class="border-bottom"></h1>
+
+                <br><h5>Últimos registros</h5><br>
+
+                <div class="form-row">
+                    <div class="card col-md-12">
+                        <div class="card-header">
+                            <nav class="navbar">
+                                <a class="text-grey">Modificado em: <em> 12/11/2019 <i class="far fa-clock"></i> </em></a>
+
+                                <ul class="nav justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link icon-blue" href="#"><i class="fas fa-edit fa-lg"></i> Editar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-dismiss="modal" class="nav-link" data-toggle="modal" data-target="#excluirRegistro" style="color: #0F6393"><i class="fas fa-trash fa-lg"></i> Excluir</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Descrever a ocorrência aqui.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="row col-12">
-                    <textarea class="form-control" rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"></textarea>
+                <br>
+                <div class="form-row">
+                    <div class="card col-md-12">
+                        <div class="card-header">
+                            <nav class="navbar">
+                                <a class="text-grey">Modificado em: <em> 12/11/2019 <i class="far fa-clock"></i> </em></a>
+
+                                <ul class="nav justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link icon-blue" href="#"><i class="fas fa-edit fa-lg"></i> Editar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-dismiss="modal" class="nav-link" data-toggle="modal" data-target="#excluirRegistro" style="color: #0F6393"><i class="fas fa-trash fa-lg"></i> Excluir</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Descrever a ocorrência aqui.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <%--  --%> 
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger">Excluir</button>
-                <button type="button" class="btn btn-warning">Editar</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             </div>
         </div>  
+    </div>
+</div>
+
+
+<%-- Modal de excluir --%>
+
+<div class="modal fade" id="excluirRegistro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>
+                    Excluir registro de <a  id="nomeExcluirAluno" class="text-bold">Aluno não encontrado</a>?
+                </h5
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" role="alert">
+                    Tem certeza que deseja excluir este registro?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Confirmar</button>
+                <button data-dismiss="modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalRegistro">Cancelar</button>
+            </div>
+        </div>
     </div>
 </div>
