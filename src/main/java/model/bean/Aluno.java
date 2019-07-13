@@ -29,7 +29,6 @@ public class Aluno implements BaseEntity, Serializable {
     @Column
     private String turma;
     
-    
 
     public Aluno() {
     }
@@ -42,6 +41,7 @@ public class Aluno implements BaseEntity, Serializable {
         this.id = id;        
     }
 
+    @Override
     public Long getId() {
         return id;
     }
@@ -81,4 +81,5 @@ public class Aluno implements BaseEntity, Serializable {
     public void setTurma(String turma) {
         this.turma = turma;
     }
+    
 }

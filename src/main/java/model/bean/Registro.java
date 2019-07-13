@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import model.dao.BaseEntity;
 
@@ -34,6 +35,9 @@ public class Registro implements BaseEntity, Serializable {
     @Column
     private String descricao;
     
+    @ManyToOne
+    private Aluno aluno;
+    
     public Registro(){
         
     }
@@ -45,6 +49,7 @@ public class Registro implements BaseEntity, Serializable {
         this.descricao = descricao;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
@@ -84,7 +89,13 @@ public class Registro implements BaseEntity, Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }    
     
 }
