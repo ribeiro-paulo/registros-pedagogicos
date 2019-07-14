@@ -9,24 +9,23 @@
     <thead>
         <tr>
             <th>Nome</th>
+            <th>Matrícula</th>
             <th>Nível</th>
             <th>Turma</th>
-            <th>Data</th>
         </tr>
     </thead>
 
     <%
-        RegistroDAO registroDAO = new RegistroDAO();
-        List<Registro> registros = registroDAO.findAll();
+        AlunoDAO alunoDAO = new AlunoDAO();
+        List<Aluno> alunos = alunoDAO.findByPasta();
 
-        for (int i = 0; i < registros.size(); i++) {%>
+        for (Aluno a : alunos) {%>
     <tbody>
-        <tr onclick="enviarRegistro('<%=registros.get(i).getAluno().getNome()%>', '<%=registros.get(i).getAluno().getNivel()%>', '<%=registros.get(i).getAluno().getTurma()%>', '<%=registros.get(i).getMatricula()%>', '<%=registros.get(i).getDescricao()%>', '<%=registros.get(i).getData()%>', '<%=registros.get(i).getId()%>')"
-            data-toggle="modal" data-target="#ModalRegistro">
-            <td><%=registros.get(i).getAluno().getNome()%></td>
-            <td><%=registros.get(i).getAluno().getNivel()%></td>
-            <td><%=registros.get(i).getAluno().getTurma()%></td>
-            <td><%=registros.get(i).getData()%></td>
+        <tr>
+            <td><%=a.getNome()%></td>
+            <td><%=a.getMatricula()%></td>
+            <td><%=a.getNivel()%></td>
+            <td><%=a.getTurma()%></td>
         </tr>
     </tbody>
     <% }%>

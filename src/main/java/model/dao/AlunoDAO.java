@@ -39,7 +39,6 @@ public class AlunoDAO {
 //
 //        return resultado;
 //    }
-
     public Aluno findByMatricula(String matricula) {
         EntityManager manager = ConnectionFactory.getEntityManager();
         Query query;
@@ -55,6 +54,16 @@ public class AlunoDAO {
             manager.getTransaction().rollback();
             return null;
         }
+    }
+
+    public List<Aluno> findByPasta() {
+        EntityManager manager = ConnectionFactory.getEntityManager();
+        Query query;
+        manager.getTransaction().begin();
+        query = (Query) manager.createQuery("from Aluno a where a.pasta = 1");
+        manager.getTransaction().commit();
+        return query.getResultList();
+
     }
 
 }

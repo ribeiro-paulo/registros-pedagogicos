@@ -1,5 +1,4 @@
 util/ConnectionFactory.class
-servlet/NovoRegistroServlet.class
 tests/AdicionarAlunos.class
 model/dao/AlunoDAO.class
 model/bean/Aluno.class

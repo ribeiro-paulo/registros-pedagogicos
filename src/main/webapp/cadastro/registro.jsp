@@ -4,7 +4,7 @@
 
 <body>
 
-    <form method="post" name="dados_cadastro" action="/registros_pedagogicos/NovoRegistroServlet">
+    <form method="post" name="dados_cadastro" action="/registros_pedagogicos/RegistroServlet">
         <br>
         <h3>Novo registro</h3>
         <br>
@@ -73,11 +73,11 @@
 
         <div class="form-row">
             <div class="form-group col-sm-12 col-lg-6 text-left">
-                <button class="btn btn-secondary" onclick="location.href = '../jsp/index.jsp'" type="button" value="Cadastrar" >
+                <button class="btn btn-secondary" onclick="location.href = '../jsp/index.jsp'" type="button" value="cancelar" >
                     <i class="fa fa-window-close mr-1"></i> Cancelar</button>
             </div>
             <div class="form-group col-sm-12 col-lg-6 text-right">
-                <button class="btn btn-primary" name="acao" type="submit" value="Cadastrar" id="background-blue">
+                <button class="btn btn-primary" name="acao" type="submit" value="cadastrar" id="background-blue">
                     <i class="fa fa-check mr-1"></i>Confirmar</button>
             </div>
         </div>

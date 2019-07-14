@@ -5,7 +5,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Aluno;
 import model.bean.Registro;
+import model.dao.AlunoDAO;
 import model.dao.GenericDAO;
 import model.dao.RegistroDAO;
 
@@ -31,6 +33,34 @@ public class RegistroServlet extends HttpServlet {
             dao.remove(r);
 
             response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");
+
+        }
+
+        if (acao.equals("cadastrar")) {
+
+            Registro registro = new Registro();
+            GenericDAO<Registro> dao = new GenericDAO<>();
+
+            registro.setMatricula(request.getParameter("matricula"));
+            registro.setData(request.getParameter("data"));
+            registro.setTipoDeOcorrencia(request.getParameter("tipoDeOcorrencia"));
+            registro.setDescricao(request.getParameter("descricao"));
+
+            AlunoDAO dao2 = new AlunoDAO();
+            Aluno a = dao2.findByMatricula(request.getParameter("matricula"));
+
+            registro.setAluno(a);
+
+            dao.saveOrUpdate(registro);
+
+            GenericDAO<Aluno> dao3 = new GenericDAO<>();
+
+            if (a.isPasta() == false) {
+                a.setPasta(true);
+                dao3.saveOrUpdate(a);
+            }
+
+            response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
 
         }
 
