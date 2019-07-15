@@ -6,7 +6,6 @@ import model.bean.Pedagoga;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import util.ConnectionFactory;
-import util.HibernateUtil;
 
 /**
  *

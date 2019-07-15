@@ -9,12 +9,20 @@
         <servlet-class>servlet.CadastrarPedagogaServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>NovoRegistroServlet</servlet-name>
-        <servlet-class>servlet.NovoRegistroServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>AlterarPedagogaServlet</servlet-name>
         <servlet-class>servlet.AlterarPedagogaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InserirAlunos</servlet-name>
+        <servlet-class>tests.InserirAlunos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistroServlet</servlet-name>
+        <servlet-class>servlet.RegistroServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>tests.NewServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -25,12 +33,20 @@
         <url-pattern>/CadastrarPedagogaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>NovoRegistroServlet</servlet-name>
-        <url-pattern>/NovoRegistroServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>AlterarPedagogaServlet</servlet-name>
         <url-pattern>/AlterarPedagogaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InserirAlunos</servlet-name>
+        <url-pattern>/InserirAlunos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroServlet</servlet-name>
+        <url-pattern>/RegistroServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -14,12 +14,12 @@ import model.dao.BaseEntity;
  * @author eddunic
  */
 @Entity
-@Table(name="aluno")
+@Table(name = "aluno")
 public class Aluno implements BaseEntity, Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
+    private Long id;
     @Column
     private String nome;
     @Column
@@ -28,20 +28,23 @@ public class Aluno implements BaseEntity, Serializable {
     private String nivel;
     @Column
     private String turma;
-    
+    @Column
+    private boolean pasta;
     
 
     public Aluno() {
     }
-    
-    public Aluno(String matricula, String nome, String nivel, String turma, Long id){
+
+    public Aluno(String matricula, String nome, String nivel, String turma, Long id, boolean pasta) {
         this.matricula = matricula;
         this.nome = nome;
         this.nivel = nivel;
         this.turma = turma;
-        this.id = id;        
+        this.id = id;
+        this.pasta = pasta;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
@@ -81,4 +84,13 @@ public class Aluno implements BaseEntity, Serializable {
     public void setTurma(String turma) {
         this.turma = turma;
     }
+
+    public boolean isPasta() {
+        return pasta;
+    }
+
+    public void setPasta(boolean pasta) {
+        this.pasta = pasta;
+    }
+
 }
