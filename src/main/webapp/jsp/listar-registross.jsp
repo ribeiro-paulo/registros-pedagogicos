@@ -1,3 +1,5 @@
+<%@page import="model.dao.GenericDAO"%>
+<%@page import="model.bean.Aux"%>
 <%@page import="model.bean.Aluno"%>
 <%@page import="model.dao.AlunoDAO"%>
 <%@page import="java.util.List"%>
@@ -14,8 +16,12 @@
     </thead>
 
     <%
+        Aux aux = new Aux();
+        GenericDAO<Aux> dao = new GenericDAO<>();
+        aux = dao.findById(Aux.class, 1L);
+        
         RegistroDAO registroDAO = new RegistroDAO();
-        List<Registro> registros = registroDAO.getRegistroByMatricula("201711440744");
+        List<Registro> registros = registroDAO.getRegistroByMatricula(aux.getMatricula());
 
         for (Registro r : registros) {%>
     <tbody>

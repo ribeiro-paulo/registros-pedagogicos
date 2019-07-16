@@ -3,6 +3,7 @@
     <persistence-unit name="registros_pedagogicosPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>model.bean.Aluno</class>
+         <class>model.bean.Aux</class>
         <class>model.bean.Pedagoga</class>
         <class>model.bean.Registro</class>
         <properties>

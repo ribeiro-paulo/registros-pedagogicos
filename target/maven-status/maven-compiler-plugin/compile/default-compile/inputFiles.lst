@@ -13,5 +13,7 @@
 /home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/bean/Pedagoga.java
 /home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/AlunoDAO.java
 /home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/BaseEntity.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/bean/Aux.java
+/home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/servlet/ListarRegistroServlet.java
 /home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/model/dao/RegistroDAO.java
 /home/eddunic/NetBeansProjects/registros-pedagogicos/src/main/java/servlet/AlterarPedagogaServlet.java
