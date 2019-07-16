@@ -128,28 +128,35 @@
         <jsp:include page="../footer.jsp"/>
         <script>
 
-            function enviarRegistro(nome, nivel, turma, matricula, descricao, data, id) {
+            function enviarRegistro(matricula) {
+//
+//                $('#nomeDoAluno').text(nome);
+//                $('#nomeExcluirAluno').text(nome);
+//                $('#descricao').text(descricao);
+//                $('#data').text(data);
 
-                $('#nomeDoAluno').text(nome);
-                $('#nomeExcluirAluno').text(nome);
-                $('#descricao').text(descricao);
-                $('#data').text(data);
+//                var inputId = document.getElementById("id");
+//                inputId.value = id;
+//
+//                var inputNome = document.getElementById("listarDiscente");
+//                inputNome.value = nome;
+//
+//                var inputNivel = document.getElementById("listarNivel");
+//                inputNivel.value = nivel;
+//
+//                var inputTurma = document.getElementById("listarTurma");
+//                inputTurma.value = turma;
 
-                var inputId = document.getElementById("id");
-                inputId.value = id;
+//                var inputMatricula = document.getElementById("listarMatricula");
+//                inputMatricula.value = matricula;
 
-                var inputNome = document.getElementById("listarDiscente");
-                inputNome.value = nome;
-
-                var inputNivel = document.getElementById("listarNivel");
-                inputNivel.value = nivel;
-
-                var inputTurma = document.getElementById("listarTurma");
-                inputTurma.value = turma;
-
-                var inputMatricula = document.getElementById("listarMatricula");
-                inputMatricula.value = matricula;
-
+                var redirectUrl = '/registros_pedagogicos/ListarRegistroServlet';
+                var form = $('<form action="' + redirectUrl + '" method="post">'
+                        + '<input type="text" name="matricula" value="'
+                        + matricula + '" />' + '</form>');
+                $('body').append(form);
+                form.submit();
+                
             }
 
             function enviarDados(nome, nivel, turma, matricula) {

@@ -12,6 +12,7 @@
             <th>Matrícula</th>
             <th>Nível</th>
             <th>Turma</th>
+            <th>Pasta</th>
         </tr>
     </thead>
 
@@ -26,6 +27,7 @@
             <td><%=a.getMatricula()%></td>
             <td><%=a.getNivel()%></td>
             <td><%=a.getTurma()%></td>
+            <td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>
         </tr>
     </tbody>
     <% }%>
