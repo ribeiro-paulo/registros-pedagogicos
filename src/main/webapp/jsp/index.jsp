@@ -30,6 +30,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
 
     </head>
 
@@ -44,7 +46,7 @@
                     <li class="nav-item active">
                         <a href="#registro" class="nav-link active" data-toggle="tab" role="tab">
                             <i class="fas fa-paste fa-lg"></i>
-                            Registros
+                            Pastas
                         </a>
                     </li>
                     <li class="nav-item">
@@ -63,7 +65,7 @@
                             <nav class="navbar navbar-light" style="border-bottom: 1px #000 solid">
                                 <%-- Search --%>  
                                 <div class="input-group col-md-3">
-                                    <input class="form-control my-0 py-1" type="text" placeholder="Buscar registro" aria-label="Search">
+                                    <input class="form-control my-0 py-1" id="txt_consulta" type="text" placeholder="Buscar pasta" aria-label="Search">
                                     <div class="input-group-append">
                                         <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
                                     </div>
@@ -84,7 +86,7 @@
 
                                                     <li class="nav-item end">
                                                         <div class="input-group md-form form-sm form-0 pl-0">
-                                                            <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+                                                            <input class="form-control my-0 py-1" id="txt_consulta" type="text" placeholder="BuscarAluno" aria-label="Search">
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
                                                             </div>
@@ -156,7 +158,7 @@
                         + matricula + '" />' + '</form>');
                 $('body').append(form);
                 form.submit();
-                
+
             }
 
             function enviarDados(nome, nivel, turma, matricula) {
@@ -176,5 +178,6 @@
             }
 
         </script>
+        <script src="../js/consulta.js"></script>
     </body>
 </html>

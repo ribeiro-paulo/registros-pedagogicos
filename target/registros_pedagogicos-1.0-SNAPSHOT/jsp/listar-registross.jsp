@@ -5,7 +5,7 @@
 <%@page import="model.dao.RegistroDAO"%>
 
 
-<table class="table table-striped table-hover">
+<table id="tabela" class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Nome</th>

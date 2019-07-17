@@ -5,7 +5,7 @@
 <%@page import="model.dao.RegistroDAO"%>
 
 
-<table class="table table-striped table-hover">
+<table id="tabela" class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Nome</th>
@@ -21,15 +21,18 @@
         List<Aluno> alunos = alunoDAO.findByPasta();
 
         for (Aluno a : alunos) {%>
-    <tbody>
-        <tr>
-            <td><%=a.getNome()%></td>
-            <td><%=a.getMatricula()%></td>
-            <td><%=a.getNivel()%></td>
-            <td><%=a.getTurma()%></td>
-            <td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>
-        </tr>
-    </tbody>
+    <form action="/registros_pedagogicos/ListarRegistroServlet" method="POST">
+        <tbody>
+            <tr>
+                <td><%=a.getNome()%></td>
+                <td><input value="<%=a.getMatricula()%>" name="matricula" style="background-color:transparent; border: transparent; max-width: 115px;" readonly/></td>
+                <td><%=a.getNivel()%></td>
+                <td><%=a.getTurma()%></td>
+                <!--<td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>-->
+                <td> <button class="btn btn-primary" type="submit" id="background-blue">Acessar Pasta</button></td>
+            </tr>
+        </tbody>
+    </form>
     <% }%>
 
 </table>

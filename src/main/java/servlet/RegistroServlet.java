@@ -9,7 +9,6 @@ import model.bean.Aluno;
 import model.bean.Registro;
 import model.dao.AlunoDAO;
 import model.dao.GenericDAO;
-import model.dao.RegistroDAO;
 
 /**
  *
@@ -32,7 +31,13 @@ public class RegistroServlet extends HttpServlet {
             Registro r = dao.findById2(Registro.class, idLong);
             dao.remove(r);
 
-            response.sendRedirect("/registros_pedagogicos/jsp/index2.jsp");
+            AlunoDAO dao2 = new AlunoDAO();
+            Aluno a = dao2.findByMatricula(request.getParameter("listarMatricula"));
+            GenericDAO<Aluno> dao3 = new GenericDAO<>();
+            a.setPasta(false);
+            dao3.saveOrUpdate(a);
+
+            response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");
 
         }
 

@@ -25,6 +25,8 @@ public class ListarRegistroServlet extends HttpServlet {
         aux.setMatricula(request.getParameter("matricula"));
 
         dao.saveOrUpdate(aux);
+        
+        response.sendRedirect("/registros_pedagogicos/jsp/index2.jsp");
 
     }
 
