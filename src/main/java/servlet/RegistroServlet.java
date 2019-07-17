@@ -32,7 +32,7 @@ public class RegistroServlet extends HttpServlet {
             Registro r = dao.findById2(Registro.class, idLong);
             dao.remove(r);
 
-            response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");
+            response.sendRedirect("/registros_pedagogicos/jsp/index2.jsp");
 
         }
 

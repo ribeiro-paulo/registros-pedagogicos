@@ -1,7 +1,5 @@
 <%@page import="model.dao.GenericDAO"%>
 <%@page import="model.bean.Aux"%>
-<%@page import="model.bean.Aluno"%>
-<%@page import="model.dao.AlunoDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="model.bean.Registro"%>
 <%@page import="model.dao.RegistroDAO"%>
@@ -10,7 +8,7 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>Matrícula</th>
+            <th>Nome</th>
             <th>Descrição</th>
         </tr>
     </thead>
@@ -25,8 +23,8 @@
 
         for (Registro r : registros) {%>
     <tbody>
-        <tr onclick="enviarRegistro2('<%=r.getMatricula()%>')" data-toggle="modal" data-target="#ModalRegistro">
-            <td><%=r.getMatricula()%></td>
+        <tr onclick="enviarRegistro2('<%=r.getAluno().getNome()%>', '<%=r.getAluno().getNivel()%>', '<%=r.getAluno().getTurma()%>', '<%=r.getMatricula()%>', '<%=r.getDescricao()%>', '<%=r.getData()%>', '<%=r.getId()%>')" data-toggle="modal" data-target="#ModalRegistro">
+            <td><%=r.getAluno().getNome()%></td>
             <td><%=r.getDescricao()%></td>
         </tr>
     </tbody>

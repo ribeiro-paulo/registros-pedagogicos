@@ -128,34 +128,27 @@
         <jsp:include page="../footer.jsp"/>
         <script>
 
-            function enviarRegistro2(matricula) {
-//
-//                $('#nomeDoAluno').text(nome);
-//                $('#nomeExcluirAluno').text(nome);
-//                $('#descricao').text(descricao);
-//                $('#data').text(data);
+            function enviarRegistro2(nome, nivel, turma, matricula, descricao, data, id) {
 
-//                var inputId = document.getElementById("id");
-//                inputId.value = id;
-//
-//                var inputNome = document.getElementById("listarDiscente");
-//                inputNome.value = nome;
-//
-//                var inputNivel = document.getElementById("listarNivel");
-//                inputNivel.value = nivel;
-//
-//                var inputTurma = document.getElementById("listarTurma");
-//                inputTurma.value = turma;
+                $('#nomeDoAluno').text(nome);
+                $('#nomeExcluirAluno').text(nome);
+                $('#descricao').text(descricao);
+                $('#data').text(data);
 
-//                var inputMatricula = document.getElementById("listarMatricula");
-//                inputMatricula.value = matricula;
+                var inputId = document.getElementById("id");
+                inputId.value = id;
 
-//                var redirectUrl = '/registros_pedagogicos/ListarRegistroServlet';
-//                var form = $('<form action="' + redirectUrl + '" method="post">'
-//                        + '<input type="text" name="matricula" value="'
-//                        + matricula + '" />' + '</form>');
-//                $('body').append(form);
-//                form.submit();
+                var inputNome = document.getElementById("listarDiscente");
+                inputNome.value = nome;
+
+                var inputNivel = document.getElementById("listarNivel");
+                inputNivel.value = nivel;
+
+                var inputTurma = document.getElementById("listarTurma");
+                inputTurma.value = turma;
+
+                var inputMatricula = document.getElementById("listarMatricula");
+                inputMatricula.value = matricula;
 
             }
 
