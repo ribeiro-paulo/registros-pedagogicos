@@ -33,9 +33,11 @@ public class Aluno implements BaseEntity, Serializable {
     
 
     public Aluno() {
+        this.pasta = false;
     }
 
     public Aluno(String matricula, String nome, String nivel, String turma, Long id, boolean pasta) {
+        this.pasta = false;
         this.matricula = matricula;
         this.nome = nome;
         this.nivel = nivel;

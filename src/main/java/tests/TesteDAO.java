@@ -67,14 +67,6 @@ public class TesteDAO {
         //	p.setSenha("abcedario");
         //	dao.saveOrUpdate(p);
         //	System.out.println("Entidade atualizada com sucesso.");
-        
-        RegistroDAO RegistroDAO = new RegistroDAO();
-        
-        List<Registro> l = dao.getRegistroByMatricula("201711440744");
-        
-        for(Registro r: l){
-            System.out.println(r.getDescricao());
-        }
 
 
     }

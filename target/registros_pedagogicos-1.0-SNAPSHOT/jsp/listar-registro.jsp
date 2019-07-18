@@ -5,13 +5,14 @@
 <%@page import="model.dao.RegistroDAO"%>
 
 
-<table class="table table-striped table-hover">
+<table id="tabela" class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Nome</th>
             <th>Matrícula</th>
             <th>Nível</th>
             <th>Turma</th>
+            <th>Pasta</th>
         </tr>
     </thead>
 
@@ -19,41 +20,35 @@
         AlunoDAO alunoDAO = new AlunoDAO();
         List<Aluno> alunos = alunoDAO.findByPasta();
 
-        for (Aluno a : alunos) {
-    %>
-    <tbody>
-        <tr>
-            <td>
-                <a href="index.jsp?matricula=<%=a.getMatricula()%>">
-                    <i class="fas fa-folder fa-lg"></i> <%=a.getNome()%>
-                </a>
-            </td>
-            <td><%=a.getMatricula()%></td>
-            <td><%=a.getNivel()%></td>
-            <td><%=a.getTurma()%></td>
-        </tr>
-    </tbody>
+        for (Aluno a : alunos) {%>
+    <form action="/registros_pedagogicos/ListarRegistroServlet" method="POST">
+        <tbody>
+            <tr>
+                <td> <i class="fas fa-folder fa-lg"></i> <%=a.getNome()%></td>
+                <td><input value="<%=a.getMatricula()%>" name="matricula" style="background-color:transparent; border: transparent; max-width: 115px;" readonly/></td>
+                <td><%=a.getNivel()%></td>
+                <td><%=a.getTurma()%></td>
+                <!--<td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>-->
+                <td> <button class="btn btn-primary" type="submit" id="background-blue">Abrir pasta</button></td>
+            </tr>
+        </tbody>
+    </form>
     <% }%>
+
 </table>
-
 <form action="/registros_pedagogicos/RegistroServlet" method="POST">
-
     <!-- Modal -->
-    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" id="modalPasta" aria-hidden="true">
+    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" id="ModalRegistro" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-            <%
-                AlunoDAO alunDAO = new AlunoDAO();
-                Aluno alunoSelecionado = alunDAO.findByMatricula(request.getParameter("matricula"));
-            %>
             <div class="modal-content">
                 <div class="modal-header">
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
                             <h3>
-                                Pasta de <a  id="nomeDoAluno" class="text-bold"><%= alunoSelecionado.getNome()%></a>
+                                Ficha de <a  id="nomeDoAluno" class="text-bold">Aluno não encontrado</a>
                             </h3>
-                            <input class="form-control" type="hidden" id="id" name="id" readonly value="<%= alunoSelecionado.getId()%>">
+                            <input class="form-control" type="hidden" id="id" name="id" readonly>
                         </li>
                     </ul>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
@@ -64,24 +59,24 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="listarDiscente">Discente</label>
-                            <input class="form-control" type="text" id="listarDiscente" name="listarDiscente" maxlength="12" placeholder="Nome do discente" readonly value="<%= alunoSelecionado.getNome()%>">
+                            <input class="form-control" type="text" id="listarDiscente" name="listarDiscente" maxlength="12" placeholder="Nome do discente" readonly>
                         </div>
                     </div>
                     <div class="form-row">
 
                         <div class="form-group col-md-4">
                             <label for="listarNivel">Nivel</label>
-                            <input class="form-control" type="text" id="listarNivel" name="listarNivel" placeholder="nivel" readonly value="<%= alunoSelecionado.getNivel()%>">
+                            <input class="form-control" type="text" id="listarNivel" name="listarNivel" placeholder="nivel" readonly>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="listarTurma">Turma</label>
-                            <input class="form-control" type="text" id="listarTurma" name="listarTurma" placeholder="Turma" readonly value="<%= alunoSelecionado.getTurma()%>">
+                            <input class="form-control" type="text" id="listarTurma" name="listarTurma" placeholder="Turma" readonly>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="listarMatricula">Matrícula</label>
-                            <input class="form-control" type="text" id="listarMatricula" name="listarMatricula" placeholder="Matrícula do discente" readonly value="<%= alunoSelecionado.getMatricula()%>">
+                            <input class="form-control" type="text" id="listarMatricula" name="listarMatricula" placeholder="Matrícula do discente" readonly>
                         </div>
                     </div>
 
@@ -89,17 +84,11 @@
 
                     <br><h5>Últimos registros</h5><br>
 
-                    <%
-                        RegistroDAO RegistroIndividual = new RegistroDAO();
-                        List<Registro> listaDeRegistros = RegistroIndividual.getRegistroByMatricula(alunoSelecionado.getMatricula());
-
-                        for (Registro r : listaDeRegistros) {
-                    %>
                     <div class="form-row">
                         <div class="card col-md-12">
                             <div class="card-header">
                                 <nav class="navbar">
-                                    <a class="text-grey">Modificado em: <em> <%= r.getData()%> <i class="far fa-clock"></i> </em></a>
+                                    <a class="text-grey">Modificado em: <em id="data"> data modificação <i class="far fa-clock"></i> </em></a>
 
                                     <ul class="nav justify-content-end">
                                         <li class="nav-item">
@@ -112,12 +101,32 @@
                                 </nav>
                             </div>
                             <div class="card-body">
-                                <p class="card-text" id="descricao"><%= r.getDescricao()%></p>
+                                <p class="card-text" id="descricao">Descrever a ocorrência aqui.</p>
                             </div>
                         </div>
                     </div>
                     <br>
-                    <% }%>
+                    <div class="form-row">
+                        <div class="card col-md-12">
+                            <div class="card-header">
+                                <nav class="navbar">
+                                    <a class="text-grey">Modificado em: <em> -- <i class="far fa-clock"></i> </em></a>
+
+                                    <ul class="nav justify-content-end">
+                                        <li class="nav-item">
+                                            <a class="nav-link icon-blue" href="#"><i class="fas fa-edit fa-lg"></i> Editar</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a data-dismiss="modal" class="nav-link" data-toggle="modal" data-target="#excluirRegistro" style="color: #0F6393"><i class="fas fa-trash fa-lg"></i> Excluir</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Descrever a ocorrência aqui.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <%--  --%> 

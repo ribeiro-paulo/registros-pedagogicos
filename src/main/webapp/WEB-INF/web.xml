@@ -25,8 +25,8 @@
         <servlet-class>tests.NewServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SelecionarRegistro</servlet-name>
-        <servlet-class>servlet.SelecionarRegistro</servlet-class>
+        <servlet-name>ListarRegistroServlet</servlet-name>
+        <servlet-class>servlet.ListarRegistroServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -53,8 +53,8 @@
         <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SelecionarRegistro</servlet-name>
-        <url-pattern>/SelecionarRegistro</url-pattern>
+        <servlet-name>ListarRegistroServlet</servlet-name>
+        <url-pattern>/ListarRegistroServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
