@@ -34,7 +34,6 @@ public class RegistroServlet extends HttpServlet {
             AlunoDAO dao2 = new AlunoDAO();
             Aluno a = dao2.findByMatricula(request.getParameter("listarMatricula"));
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
-            a.setPasta(false);
             dao3.saveOrUpdate(a);
 
             response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");

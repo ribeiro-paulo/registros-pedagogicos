@@ -24,12 +24,12 @@
     <form action="/registros_pedagogicos/ListarRegistroServlet" method="POST">
         <tbody>
             <tr>
-                <td> <i class="fas fa-folder fa-lg"></i> <%=a.getNome()%></td>
+                <td><%=a.getNome()%></td>
                 <td><input value="<%=a.getMatricula()%>" name="matricula" style="background-color:transparent; border: transparent; max-width: 115px;" readonly/></td>
                 <td><%=a.getNivel()%></td>
                 <td><%=a.getTurma()%></td>
                 <!--<td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>-->
-                <td> <button class="btn btn-primary" type="submit" id="background-blue">Abrir pasta</button></td>
+                <td> <button class="btn btn-primary" type="submit" id="background-blue">Acessar Pasta</button></td>
             </tr>
         </tbody>
     </form>
