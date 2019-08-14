@@ -5,7 +5,7 @@
 <%@page import="model.dao.RegistroDAO"%>
 
 
-<table id="tabela" class="table table-striped table-hover">
+<table class="table table-sm table-striped table-bordered table-hover" id="table-registro">
     <thead>
         <tr>
             <th>Nome</th>
@@ -16,26 +16,49 @@
         </tr>
     </thead>
 
-    <%
-        AlunoDAO alunoDAO = new AlunoDAO();
-        List<Aluno> alunos = alunoDAO.findByPasta();
-
-        for (Aluno a : alunos) {%>
-    <form action="/registros_pedagogicos/ListarRegistroServlet" method="POST">
         <tbody>
+            <%
+                AlunoDAO alunoDAO = new AlunoDAO();
+                List<Aluno> alunos = alunoDAO.findByPasta();
+                for (Aluno a : alunos) {%>
             <tr>
                 <td><%=a.getNome()%></td>
                 <td><input value="<%=a.getMatricula()%>" name="matricula" style="background-color:transparent; border: transparent; max-width: 115px;" readonly/></td>
                 <td><%=a.getNivel()%></td>
                 <td><%=a.getTurma()%></td>
                 <!--<td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>-->
-                <td> <button class="btn btn-primary" type="submit" id="background-blue">Acessar Pasta</button></td>
+                <!--<td> <button class="btn btn-primary" type="submit" id="background-blue">Acessar Pasta</button></td>-->
+                <td class="text-center"><a type="button" class="btn btn-primary" id="background-blue" href="pasta-aluno.jsp?matricula=<%=a.getMatricula()%>">Abrir Pasta</a></td>
             </tr>
+            <% }%>
         </tbody>
-    </form>
-    <% }%>
+
+    <tfoot>
+
+        <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Nível</th>
+            <th>Turma</th>
+            <th>Pasta</th>
+        </tr>
+    </tfoot>
 
 </table>
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/mdb.min.js"></script>
+<script src="../js/general.js"></script>
+<script src="../js/jquery.mask.min.js"></script>
+<script src="../js/mascaras.js"></script>
+<script src="../js/addons/datatables.min.js"></script>
+
+<script src="../js/filtro/registro.js"></script>
+
+
 <form action="/registros_pedagogicos/RegistroServlet" method="POST">
     <!-- Modal -->
     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" id="ModalRegistro" aria-hidden="true">

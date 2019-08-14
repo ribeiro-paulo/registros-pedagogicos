@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page import="model.dao.AlunoDAO"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,12 +14,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="teste.jsp?matricula=paulo">paulo</a>
+        
 
         <%
             String mensagem = request.getParameter("matricula");
+            
+            AlunoDAO dao = new AlunoDAO();
+            
+            String nome = dao.findByMatricula(mensagem).getNome();
+            
         %>
-        <h2><%= mensagem%></h2>
+        <h2><%= nome%></h2>
         
 
     </body>

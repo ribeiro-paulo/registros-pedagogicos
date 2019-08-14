@@ -63,16 +63,15 @@
 
 
                             </div> 
-
+                            
                             <div class="form-row">
-                                <div class="form-group col-sm-12 col-lg-6 text-left">
-                                    <button class="btn btn-secondary" name="acao" onClick="window.open('../index.jsp')" value="Cadastrar">
-                                        <i class="fa fa-times mr-1"></i>Cancelar</button>
+                                <div class="form-group col-lg-12 text-center">
+                                    <button class="btn btn-primary btn-lg btn-block" name="acao" type="submit" value="Cadastrar" id="background-blue">Cadastrar-se</button>
                                 </div>
-                                
-                                <div class="form-group col-sm-12 col-lg-6 text-right">
-                                    <button class="btn btn-primary" name="acao" type="submit" value="Cadastrar" id="background-blue">
-                                        <i class="fa fa-check mr-1"></i>Confirmar</button>
+
+                                <div class="col-md-12 text-center">
+                                    <label>Já possui cadastro?</label>
+                                    <a class="link" href="../index.jsp"><b class="icon-blue">Entrar</b></a>
                                 </div>
                             </div>
                         </form>

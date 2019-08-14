@@ -5,32 +5,35 @@
 <body>
 
     <form method="post" name="dados_cadastro" action="/registros_pedagogicos/RegistroServlet">
-        <br>
-        <h3>Novo registro</h3>
-        <br>
+        
+        <br> <h3>Novo registro</h3> <br>
         <h5 class="border-bottom border-dark"></h5>
         <br>
+        
         <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="discente">Discente</label>
-                <input class="form-control" type="text" id="discente" name="discente" maxlength="12" placeholder="Nome do discente" readonly>
-            </div>
-        </div>
-        <div class="form-row">
-
-            <div class="form-group col-md-4">
-                <label for="nivel">Nivel</label>
-                <input class="form-control" type="text" id="nivel" name="nivel" placeholder="nivel" readonly>
+            <div class="col-md-2">
+                <img src="../imagens/usuario.png" class="img-thumbnail" readonly>
             </div>
 
-            <div class="form-group col-md-4">
-                <label for="turma">Turma</label>
-                <input class="form-control" type="text" id="turma" name="turma" placeholder="Turma" readonly>
-            </div>
+            <div class="form-row col-md-10">
+                <div class="form-group col-md-12">
+                    <label for="discente">Discente</label>
+                    <input class="form-control" type="text" id="discente" name="discente" maxlength="12" placeholder="Nome do discente" readonly>
+                </div>
 
-            <div class="form-group col-md-4">
-                <label for="matricula">Matrícula</label>
-                <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" readonly>
+                <div class="form-group col-md-4">
+                    <label for="nivel">Nivel</label>
+                    <input class="form-control" type="text" id="nivel" name="nivel" placeholder="nivel" readonly>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="turma">Turma</label>
+                    <input class="form-control" type="text" id="turma" name="turma" placeholder="Turma" readonly>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="matricula">Matrícula</label>
+                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" readonly>
+                </div>
             </div>
         </div>
 
