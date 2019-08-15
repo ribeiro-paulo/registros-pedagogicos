@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Aluno;
+import model.bean.Pedagoga;
 import model.bean.Registro;
 import model.dao.GenericDAO;
 import model.dao.RegistroDAO;
@@ -68,7 +69,17 @@ public class InserirAlunos extends HttpServlet {
         a5.setNivel("Graduação");
         a5.setTurma("IINF31A");
         g5.saveOrUpdate(a5);
-
+        
+        Pedagoga p = new Pedagoga();
+        GenericDAO<Pedagoga> pDAO = new GenericDAO<>();
+        p.setNome("Pedagoga teste");
+        p.setSenha("123");
+        p.setSiape("2019");
+        p.setUsuario("paulo");
+        pDAO.saveOrUpdate(p);
+        
+        response.sendRedirect("../registros_pedagogicos/index.jsp");
+        
 //        RegistroDAO registroDAO = new RegistroDAO();
 //        List<Registro> registros = registroDAO.findAll();
 //        

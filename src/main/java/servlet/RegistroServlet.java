@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class RegistroServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String acao = request.getParameter("acao");
-
+        PrintWriter out = response.getWriter();
         if (acao.equals("confirmar")) {
 
             String id = request.getParameter("id");
@@ -33,6 +34,7 @@ public class RegistroServlet extends HttpServlet {
 
             AlunoDAO dao2 = new AlunoDAO();
             Aluno a = dao2.findByMatricula(request.getParameter("matricula"));
+            a.setQtdRegistro(a.getQtdRegistro() - 1);
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
             dao3.saveOrUpdate(a);
 
@@ -59,13 +61,15 @@ public class RegistroServlet extends HttpServlet {
 
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
 
-            if (a.isPasta() == false) {
+            a.setQtdRegistro(a.getQtdRegistro() + 1);
+            
+            if(!a.isPasta()){
                 a.setPasta(true);
-                dao3.saveOrUpdate(a);
             }
-
+            
+            dao3.saveOrUpdate(a);
+            
             response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
-
         }
 
     }

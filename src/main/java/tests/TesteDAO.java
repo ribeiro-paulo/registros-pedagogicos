@@ -67,7 +67,12 @@ public class TesteDAO {
         //	p.setSenha("abcedario");
         //	dao.saveOrUpdate(p);
         //	System.out.println("Entidade atualizada com sucesso.");
-
+        AlunoDAO alunoDAO = new AlunoDAO();
+        List<Aluno> alunos = alunoDAO.findByPasta();
+        
+        for(Aluno a : alunos){
+            System.out.println(a.getNome());
+        }
 
     }
 }

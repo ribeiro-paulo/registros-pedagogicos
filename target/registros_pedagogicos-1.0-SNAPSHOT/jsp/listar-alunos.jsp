@@ -6,11 +6,11 @@
 
     <thead>
         <tr>
-            <th>Ação</th>
             <th>Nome</th>
             <th>Matrícula</th>
             <th>Nível</th>
             <th>Turma</th>
+            <th>Selecione</th>
         </tr>
     </thead>
 
@@ -21,17 +21,11 @@
 
             for (int i = 0; i < alunos.size(); i++) {%>
         <tr>
-            <td class="text-center">
-                 <div class="form-check text-end">
-                    <input class="form-check-input" type="checkbox"  onclick="enviarDados('<%=alunos.get(i).getNome()%>', '<%=alunos.get(i).getNivel()%>', '<%=alunos.get(i).getTurma()%>', '<%=alunos.get(i).getMatricula()%>')" >
-                </div>
-            </td>
             <td><%=alunos.get(i).getNome()%></td>
             <td><%=alunos.get(i).getMatricula()%></td>
             <td><%=alunos.get(i).getNivel()%></td>
             <td><%=alunos.get(i).getTurma()%></td>
-            
-            
+            <td class="text-center"><a type="button" class="btn btn-primary" id="background-blue" href="../cadastro/registro.jsp?matricula=<%=alunos.get(i).getMatricula()%>">Selecionar</a></td>
         </tr>
         <% }%>
     </tbody>
@@ -39,11 +33,11 @@
     <tfoot>
 
         <tr>
-            <th>Selecionar</th>
             <th>Nome</th>
             <th>Matrícula</th>
             <th>Nível</th>
             <th>Turma</th>
+            <th>Selecione</th>
         </tr>
     </tfoot>
 
