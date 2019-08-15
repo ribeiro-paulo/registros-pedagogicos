@@ -11,7 +11,7 @@
             <th>Nome</th>
             <th>Matrícula</th>
             <th>Nível</th>
-            <th>Turma</th>
+            <th>Turma </th>
             <th>Pasta</th>
         </tr>
     </thead>
@@ -23,11 +23,9 @@
                 for (Aluno a : alunos) {%>
             <tr>
                 <td><%=a.getNome()%></td>
-                <td><input value="<%=a.getMatricula()%>" name="matricula" style="background-color:transparent; border: transparent; max-width: 115px;" readonly/></td>
+                <td><%=a.getMatricula()%></td>
                 <td><%=a.getNivel()%></td>
                 <td><%=a.getTurma()%></td>
-                <!--<td><a type="button" href="index2.jsp" onclick="enviarRegistro('<%=a.getMatricula()%>')">-Acessar-</a></td>-->
-                <!--<td> <button class="btn btn-primary" type="submit" id="background-blue">Acessar Pasta</button></td>-->
                 <td class="text-center"><a type="button" class="btn btn-primary" id="background-blue" href="pasta-aluno.jsp?matricula=<%=a.getMatricula()%>">Abrir Pasta</a></td>
             </tr>
             <% }%>

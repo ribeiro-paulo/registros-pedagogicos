@@ -32,11 +32,11 @@ public class RegistroServlet extends HttpServlet {
             dao.remove(r);
 
             AlunoDAO dao2 = new AlunoDAO();
-            Aluno a = dao2.findByMatricula(request.getParameter("listarMatricula"));
+            Aluno a = dao2.findByMatricula(request.getParameter("matricula"));
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
             dao3.saveOrUpdate(a);
 
-            response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");
+            response.sendRedirect("/registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + request.getParameter("matricula"));
 
         }
 
