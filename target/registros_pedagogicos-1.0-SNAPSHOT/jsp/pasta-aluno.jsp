@@ -49,10 +49,10 @@
         <div class="container body">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
-                    
+
                     <a class="text-light nav-link" href="../jsp/index.jsp"> <h4><i class="fa fa-arrow-left mr-1"></i></h4> </a>
                     <h4 class="text-light">Pasta de <b> <%= aluno.getNome()%> </b></h4>
-                   
+
                 </nav>
 
                 <div class=" card mb-5 border-0">
@@ -88,8 +88,16 @@
 
                         <h1 class="border-bottom"></h1>
 
-                        <br><h5>Últimos registros</h5><br>
-
+                        
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>">Ver desempenho</a>
+                            </li>
+                        </ul>
+                        <br>
                         <% RegistroDAO registroDAO = new RegistroDAO();
                             List<Registro> registros = registroDAO.getRegistroByMatricula(request.getParameter("matricula"));
 
