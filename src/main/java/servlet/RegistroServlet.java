@@ -71,17 +71,18 @@ public class RegistroServlet extends HttpServlet {
             response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
         }
 
-        if (acao.equals("editar")) {     
-            System.out.println("OIa");
-//            String id = request.getParameter("id");
-//            Long idLong = Long.parseLong(id);
-//            
-//            GenericDAO<Registro> dao = new GenericDAO();
-//            Registro r = dao.findById2(Registro.class, idLong);
-//            dao.saveOrUpdate(r);
-//            
-//            String mat = request.getParameter("matricula");
-//            response.sendRedirect("../registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + mat);
+        if (acao.equals("editar")) {              
+            String id = request.getParameter("id");
+            Long idLong = Long.parseLong(id);
+            
+            GenericDAO<Registro> dao = new GenericDAO();
+            Registro r = dao.findById(Registro.class, idLong);
+            r.setData(request.getParameter("data"));
+            r.setTipoDeOcorrencia(request.getParameter("tipoDeOcorrencia"));
+            r.setDescricao(request.getParameter("descricao"));
+            dao.saveOrUpdate(r);
+            
+            response.sendRedirect("../registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + request.getParameter("matricula"));
         }
     }
 

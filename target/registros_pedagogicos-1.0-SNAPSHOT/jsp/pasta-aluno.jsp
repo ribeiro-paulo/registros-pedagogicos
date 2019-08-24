@@ -88,7 +88,7 @@
 
                         <h1 class="border-bottom"></h1>
 
-                        
+
                         <ul class="nav nav-tabs card-header-tabs">
                             <li class="nav-item">
                                 <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
@@ -193,6 +193,7 @@
 
                                                         <label for="tipoDeOcorrencia">Tipo de ocorrencia</label>
                                                         <select class="form-control col-md-12" id="tipoDeOcorrencia" name="tipoDeOcorrencia">
+                                                            <option hidden="true"><%=r.getTipoDeOcorrencia()%></option>
                                                             <option>Pais</option>
                                                             <option>Professor</option>
                                                             <option>Requerimento</option>
@@ -207,14 +208,14 @@
 
                                         <%--  --%> 
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" name="acao" value="editar" data-dismiss="modal">Alterar</button>
+                                            <button type="submit" class="btn btn-primary" name="acao" value="editar">Alterar</button>
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                         </div>
                                     </div>  
                                 </div>
-                            </div>
-                        </form>
-                        <% }%>
+                                <form>
+                            </div>                                 
+                            <% }%>
                     </div>
                 </div>
             </div>
