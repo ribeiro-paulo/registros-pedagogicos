@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class RegistroServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String acao = request.getParameter("acao");
-
+        PrintWriter out = response.getWriter();
         if (acao.equals("confirmar")) {
 
             String id = request.getParameter("id");
@@ -32,13 +33,12 @@ public class RegistroServlet extends HttpServlet {
             dao.remove(r);
 
             AlunoDAO dao2 = new AlunoDAO();
-            Aluno a = dao2.findByMatricula(request.getParameter("listarMatricula"));
+            Aluno a = dao2.findByMatricula(request.getParameter("matricula"));
+            a.setQtdRegistro(a.getQtdRegistro() - 1);
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
-            a.setPasta(false);
             dao3.saveOrUpdate(a);
 
-            response.sendRedirect("/registros_pedagogicos/jsp/index.jsp");
-
+            response.sendRedirect("/registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + request.getParameter("matricula"));
         }
 
         if (acao.equals("cadastrar")) {
@@ -60,15 +60,29 @@ public class RegistroServlet extends HttpServlet {
 
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
 
-            if (a.isPasta() == false) {
+            a.setQtdRegistro(a.getQtdRegistro() + 1);
+
+            if (!a.isPasta()) {
                 a.setPasta(true);
-                dao3.saveOrUpdate(a);
             }
 
-            response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
+            dao3.saveOrUpdate(a);
 
+            response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
         }
 
+        if (acao.equals("editar")) {     
+            System.out.println("OIa");
+//            String id = request.getParameter("id");
+//            Long idLong = Long.parseLong(id);
+//            
+//            GenericDAO<Registro> dao = new GenericDAO();
+//            Registro r = dao.findById2(Registro.class, idLong);
+//            dao.saveOrUpdate(r);
+//            
+//            String mat = request.getParameter("matricula");
+//            response.sendRedirect("../registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + mat);
+        }
     }
 
 }

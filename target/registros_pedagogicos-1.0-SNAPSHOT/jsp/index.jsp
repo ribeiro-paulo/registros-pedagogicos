@@ -1,9 +1,3 @@
-<%-- 
-    Document   : home
-    Created on : 15/05/2019, 11:54:23
-    Author     : Paulo Ribeiro
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -26,158 +20,57 @@
         <link rel="stylesheet" href="../css/bootstrap/js/bootstrap.js">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
 
     </head>
 
     <body class="body">
         <jsp:include page="../header.jsp"/>
-
         <div class="container body">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
+                    <h4 class="text-light">Gerenciar <b>alunos</b></h4>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mr-auto"> </ul>
+                        <span class="navbar">
+                            <button class="btn btn-outline-light" data-toggle="modal" data-target=".bd-example-modal-xl">Novo registro</button>
+                        </span>
+                    </div>
+                </nav>
 
-            <div class="container-fundo">
-                <!--Nav Tabs-->
-                <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <li class="nav-item active">
-                        <a href="#registro" class="nav-link active" data-toggle="tab" role="tab">
-                            <i class="fas fa-paste fa-lg"></i>
-                            Pastas
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#desempenho" class="nav-link" data-toggle="tab" role="tab">
-                            <i class="fas fa-chart-bar fa-lg"></i>
-                            Acompanhamento   
-                        </a>
-                    </li>
-                </ul>
 
-                <div class="tab-content card mb-5 border-0">
-                    <%-- Troca a lista de registros pela de cadastro ao clicar em novo registro --%>  
-                    <div class="tab-pane fade in show active" id="registro" role="tabpanel">
-                        <div role="tablist">
+                <div class=" card mb-5 border-0">
+                    <%-- Chama o modal ao clicar em novo registro --%>  
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Selecione um aluno</h5>
 
-                            <nav class="navbar navbar-light" style="border-bottom: 1px #000 solid">
-                                <%-- Search --%>  
-                                <div class="input-group col-md-3">
-                                    <input class="form-control my-0 py-1" id="txt_consulta" type="text" placeholder="Buscar pasta" aria-label="Search">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
-                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-
-                                <%-- Novo registro --%>  
-                                <button class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Novo registro</button>
-                                <%-- Chama o modal ao clicar em novo registro --%>  
-                                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <ul class="navbar-nav">
-
-                                                    <li class="nav-item">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Selecione um aluno</h5>
-                                                    </li>
-
-                                                    <li class="nav-item end">
-                                                        <div class="input-group md-form form-sm form-0 pl-0">
-                                                            <input class="form-control my-0 py-1" id="txt_consulta" type="text" placeholder="BuscarAluno" aria-label="Search">
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <jsp:include page="listar-alunos.jsp"/>
-                                            </div>
-                                            <%-- Chama o novo registro --%> 
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                <button type="button" href="#novo" data-dismiss="modal" data-toggle="tab" role="tab" class="btn btn-primary">Confirmar</button>
-                                            </div>
-                                        </div>  
-                                    </div>
+                                <div class="modal-body">
+                                    <jsp:include page="listar-alunos.jsp"/>
                                 </div>
-                            </nav>
-                        </div> 
-
-                        <div class="tab-content card mb-5 border-0">
-                            <div class="tab-pane fade in show active" id="lista" role="tabpanel">
-                                <jsp:include page="listar-registro.jsp"/>
-                            </div>
+                            </div>  
                         </div>
                     </div>
-                    <div class="tab-pane fade tab-content card mb-5 border-0" id="novo" role="tabpanel" style="margin-left: 3%; margin-right: 3%">
-                        <jsp:include page="../cadastro/registro.jsp"/>
-                    </div>       
-                    <div class="tab-pane fade" id="desempenho" role="tabpanel">
-                        <jsp:include page="desempenho.jsp"/>
+
+                    <div class="card mb-5 border-0">
+                        <div class="col-12">
+                            <br>
+                            <jsp:include page="listar-registro.jsp"/>   
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <jsp:include page="../footer.jsp"/>
-        <script>
-
-            function enviarRegistro(matricula) {
-//
-//                $('#nomeDoAluno').text(nome);
-//                $('#nomeExcluirAluno').text(nome);
-//                $('#descricao').text(descricao);
-//                $('#data').text(data);
-
-//                var inputId = document.getElementById("id");
-//                inputId.value = id;
-//
-//                var inputNome = document.getElementById("listarDiscente");
-//                inputNome.value = nome;
-//
-//                var inputNivel = document.getElementById("listarNivel");
-//                inputNivel.value = nivel;
-//
-//                var inputTurma = document.getElementById("listarTurma");
-//                inputTurma.value = turma;
-
-//                var inputMatricula = document.getElementById("listarMatricula");
-//                inputMatricula.value = matricula;
-
-                var redirectUrl = '/registros_pedagogicos/ListarRegistroServlet';
-                var form = $('<form action="' + redirectUrl + '" method="post">'
-                        + '<input type="text" name="matricula" value="'
-                        + matricula + '" />' + '</form>');
-                $('body').append(form);
-                form.submit();
-
-            }
-
-            function enviarDados(nome, nivel, turma, matricula) {
-
-                var inputNome = document.getElementById("discente");
-                inputNome.value = nome;
-
-                var inputNivel = document.getElementById("nivel");
-                inputNivel.value = nivel;
-
-                var inputTurma = document.getElementById("turma");
-                inputTurma.value = turma;
-
-                var inputMatricula = document.getElementById("matricula");
-                inputMatricula.value = matricula;
-
-            }
-
-        </script>
-        <script src="../js/consulta.js"></script>
     </body>
 </html>

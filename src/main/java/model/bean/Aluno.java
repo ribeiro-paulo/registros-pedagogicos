@@ -30,10 +30,13 @@ public class Aluno implements BaseEntity, Serializable {
     private String turma;
     @Column
     private boolean pasta;
+    @Column
+    private int qtdRegistro;
     
-
+    
     public Aluno() {
         this.pasta = false;
+        this.qtdRegistro = 0;
     }
 
     public Aluno(String matricula, String nome, String nivel, String turma, Long id, boolean pasta) {
@@ -44,6 +47,14 @@ public class Aluno implements BaseEntity, Serializable {
         this.turma = turma;
         this.id = id;
         this.pasta = pasta;
+    }
+
+    public int getQtdRegistro() {
+        return qtdRegistro;
+    }
+
+    public void setQtdRegistro(int qtdRegistro) {
+        this.qtdRegistro = qtdRegistro;
     }
 
     @Override

@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<nav class="navbar navbar-expand-lg ligh" id="background-blue">
+<nav class="navbar navbar-expand-lg ligh" id="background-blue" style="margin-bottom: 3%">
     <div class="container-fluid" id="background-blue">
         <div class="navbar-header">
             <a class="navbar-left" href="../jsp/home.jsp"><img src="../imagens/logo.png" width="440" height="60"></a>

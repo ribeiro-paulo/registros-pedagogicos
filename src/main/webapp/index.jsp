@@ -36,8 +36,8 @@
                         <form action="/registros_pedagogicos/LoginServlet" method="post">
                             <section>
                                 <div class="form-group">
-                                    <label id="label" for="nome">Usuário</label>
-                                    <input class="form-control validate" type="text" placeholder="Nome de usuário" id="usuario" name="usuario" required>
+                                    <label id="label" for="nome">Usuário ou SIAPE</label>
+                                    <input class="form-control validate" type="text" placeholder="Nome de usuário ou matrícula SIAPE" id="usuario" name="usuario" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="senha">Senha</label>

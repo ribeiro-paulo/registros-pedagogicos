@@ -60,7 +60,7 @@ public class AlunoDAO {
         EntityManager manager = ConnectionFactory.getEntityManager();
         Query query;
         manager.getTransaction().begin();
-        query = (Query) manager.createQuery("from Aluno a where a.pasta = 1");
+        query = (Query) manager.createQuery("from Aluno a where a.qtdRegistro != 0");
         manager.getTransaction().commit();
         return query.getResultList();
 
