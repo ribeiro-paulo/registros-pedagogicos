@@ -39,7 +39,6 @@ public class RegistroServlet extends HttpServlet {
             dao3.saveOrUpdate(a);
 
             response.sendRedirect("/registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + request.getParameter("matricula"));
-
         }
 
         if (acao.equals("cadastrar")) {
@@ -62,16 +61,29 @@ public class RegistroServlet extends HttpServlet {
             GenericDAO<Aluno> dao3 = new GenericDAO<>();
 
             a.setQtdRegistro(a.getQtdRegistro() + 1);
-            
-            if(!a.isPasta()){
+
+            if (!a.isPasta()) {
                 a.setPasta(true);
             }
-            
+
             dao3.saveOrUpdate(a);
-            
+
             response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
         }
 
+        if (acao.equals("editar")) {              
+            String id = request.getParameter("idEditar");
+            Long idLong = Long.parseLong(id);
+            
+            GenericDAO<Registro> dao = new GenericDAO();
+            Registro r = dao.findById(Registro.class, idLong);
+            r.setData(request.getParameter("data"));
+            r.setTipoDeOcorrencia(request.getParameter("tipoDeOcorrencia"));
+            r.setDescricao(request.getParameter("descricao"));
+            dao.saveOrUpdate(r);
+            
+            response.sendRedirect("../registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + request.getParameter("matricula"));
+        }
     }
 
 }

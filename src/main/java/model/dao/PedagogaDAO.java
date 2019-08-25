@@ -21,7 +21,7 @@ public class PedagogaDAO {
         Pedagoga p;
         try {
             manager.getTransaction().begin();
-            query = (Query) manager.createQuery("from Pedagoga p where p.usuario =:usuario")
+            query = (Query) manager.createQuery("from Pedagoga p where p.usuario =:usuario or p.siape =:usuario")
                     .setParameter("usuario", usuario);
             p = (Pedagoga) query.getSingleResult();
             manager.getTransaction().commit();

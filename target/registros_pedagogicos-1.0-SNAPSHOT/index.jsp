@@ -23,9 +23,14 @@
     </head>
 
     <body class="body">
-
-    <nav class="navbar navbar-light" id="background-blue">
-        <a class="navbar-brand" href="#"><img src="imagens/logo.png" width="auto" height="70px"></a>
+    <nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 3%">
+        <div class="col-12">
+            <h3>
+                <a class="text-white"> 
+                    <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
+                </a>
+            </h3>
+        </div>
     </nav>
     <div class="container">
         <div class="row justify-content-center">
@@ -36,8 +41,8 @@
                         <form action="/registros_pedagogicos/LoginServlet" method="post">
                             <section>
                                 <div class="form-group">
-                                    <label id="label" for="nome">Usuário</label>
-                                    <input class="form-control validate" type="text" placeholder="Nome de usuário" id="usuario" name="usuario" required>
+                                    <label id="label" for="nome">Usuário ou SIAPE</label>
+                                    <input class="form-control validate" type="text" placeholder="Insira seu Usuário ou SIAPE" id="usuario" name="usuario" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="senha">Senha</label>
@@ -59,6 +64,6 @@
             </div>
         </div> 
     </div>
-    <jsp:include page="footer.jsp"/>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

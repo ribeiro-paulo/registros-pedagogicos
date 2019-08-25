@@ -56,9 +56,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
 
-                    <a class="text-light nav-link" href="../jsp/index.jsp"> <h4><i class="fa fa-arrow-left mr-1"></i></h4> </a>
-                    <h4 class="text-light">Pasta de <b> <%= aluno.getNome()%> </b></h4>
-
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-arrow-left mr-1"></i> Pasta de <b><%= aluno.getNome()%> </a>
+                    
                 </nav>
 
                 <div class=" card mb-5 border-0">
@@ -92,10 +91,8 @@
                             </div>
                         </div>
 
-                        <h1 class="border-bottom"></h1>
-
-
-                        <ul class="nav nav-tabs card-header-tabs">
+                        <br>
+                        <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
                             </li>
@@ -106,108 +103,14 @@
                         <br>
 
                         <div class="row">
-                            <br>
-                            <!--                            <div class="col-md-6">
-                                                            <canvas id="line"></canvas>
-                                                        </div>
-                            
-                                                        <div class="col-md-6">
-                                                            <canvas id="bar"></canvas>
-                                                        </div>
-                                                        <br><br>
-                                                        <div class="col-md-6">
-                                                            <canvas id="horizontal-bar"></canvas>
-                                                        </div>
-                            
-                                                        <div class="col-md-6">
-                                                            <canvas id="pie"></canvas>
-                                                        </div>-->
-                            
-                            <div class="col-md-12">
-                                <br>
-                                <h4>Boletim</h4>
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Disciplinas</th>
-                                            <th scope="col">1° etapa</th>
-                                            <th scope="col">2° etapa</th>
-                                            <th scope="col">3° etapa</th>
-                                            <th scope="col">4° etapa</th>
-                                            <th scope="col">Situação</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td scope="row">Portuguẽs</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>7</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">Matemática</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">Física</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>5</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td scope="row">Geografia</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td scope="row">História</td>
-                                            <td>10</td>
-                                            <td>8</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td scope="row">Química</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>7</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td scope="row">Inglẽs</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>Aprovado</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <jsp:include page="boletim.jsp"/>
 
                             <div class="col-12">
                                 <br>
-                                <h4>Média de rendimento anual</h4>
-                                <canvas id="line"></canvas>
+                                <h4>Rendimento anual</h4>
+                                <canvas id="horizontal-bar"></canvas>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -219,6 +122,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script src="../js/Chart.min.js"></script>
     <script type="text/javascript" src="../js/graficos/line.js"></script>
+    <script type="text/javascript" src="../js/graficos/linepinc.js"></script>
+    <script type="text/javascript" src="../js/graficos/linegreen.js"></script>
+    <script type="text/javascript" src="../js/graficos/linered.js"></script>
+    <script type="text/javascript" src="../js/graficos/lineorange.js"></script>
+    <script type="text/javascript" src="../js/graficos/linedarkblue.js"></script>
+    <script type="text/javascript" src="../js/graficos/line2.js"></script>
     <script type="text/javascript" src="../js/graficos/bar.js"></script>
     <script type="text/javascript" src="../js/graficos/horizontal-bar.js"></script>
     <script type="text/javascript" src="../js/graficos/pie.js"></script>

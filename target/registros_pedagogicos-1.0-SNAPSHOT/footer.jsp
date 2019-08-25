@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small  pt-4" id="background-blue" style="color: white; margin-top: 6%">
+<footer class="page-footer font-small  pt-4" id="background-blue" style="color: white; margin-top: 2%">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -11,7 +11,7 @@
             <div class="col-md-3 mt-md-0 mt-3">
 
                 <!-- Content -->
-                <h5 class="text-uppercase"><i class="fas fa-map-marker-alt"></i><b>  Encontre-nos</b><br></h5>
+                <h6 class="text-uppercase"><i class="fas fa-map-marker-alt"></i><b>  Encontre-nos</b><br></h6>
                 <p> Av. Sete de Setembro, 1975<br>
                     Centro, Manaus/AM, 69020-120</p>
             </div>
@@ -23,7 +23,7 @@
             <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase"><i class="fas fa-phone"></i><b>  Contato</b></h5>
+                <h6 class="text-uppercase"><i class="fas fa-phone"></i><b>  Contato</b></h6>
 
                 <ul class="list-unstyled">
                     <li>
@@ -47,7 +47,7 @@
             <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase"><i class="fas fa-link"></i><b>  Redes sociais</b><br></h5>
+                <h6 class="text-uppercase"><i class="fas fa-link"></i><b>  Redes sociais</b><br></h6>
 
                 <ul class="list-unstyled">
                     <li>
@@ -62,7 +62,7 @@
             <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase"><i class="fas fa-file-alt"></i><b>  Sobre nós</b><br></h5>
+                <h6 class="text-uppercase"><i class="fas fa-file-alt"></i><b>  Sobre nós</b><br></h6>
 
                 <ul class="list-unstyled">
                     <li>
