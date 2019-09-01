@@ -4,7 +4,6 @@
     Author     : Paulo Ribeiro
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -22,7 +21,7 @@
 <html>
     <head>
         <!-- Required meta tags -->
-        <title>Registros PedagÃ³gicos</title>
+        <title>Registros Pedagógicos</title>
         <meta charset="utf-8">  
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.css"/>
@@ -49,10 +48,7 @@
         <div class="container body">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
-
-                    <a class="text-light nav-link" href="../jsp/index.jsp"> <h4><i class="fa fa-arrow-left mr-1"></i></h4> </a>
-                    <h4 class="text-light">Pasta de <b> <%= aluno.getNome()%> </b></h4>
-
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-arrow-left mr-1"></i> Pasta de <b> <%= aluno.getNome()%> </b></a>
                 </nav>
 
                 <div class=" card mb-5 border-0">
@@ -80,28 +76,28 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="matricula">MatrÃ­cula</label>
-                                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="MatrÃ­cula do discente" value="<%=aluno.getMatricula()%>" readonly>
+                                    <label for="matricula">Matrícula</label>
+                                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" value="<%=aluno.getMatricula()%>" readonly>
                                 </div>
                             </div>
                         </div>
 
-                        <h1 class="border-bottom"></h1>
+                        <br>
 
-
-                        <ul class="nav nav-tabs card-header-tabs">
+                        <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Ãšltimos registros</a>
+                                <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>">Ver desempenho</a>
                             </li>
                         </ul>
+
                         <br>
                         <% RegistroDAO registroDAO = new RegistroDAO();
                             List<Registro> registros = registroDAO.getRegistroByMatricula(request.getParameter("matricula"));
-
-                            for (Registro r : registros) {%>
+                            if (registros.size() > 0) {
+                                for (Registro r : registros) {%>
                         <form action="/registros_pedagogicos/RegistroServlet" method="POST">
                             <div class="form-row">
                                 <div class="card col-md-12">
@@ -172,6 +168,10 @@
                                             <h5>
                                                 Editando registro de <a class="text-bold"><%= aluno.getNome()%></a>
                                             </h5>
+
+                                            <input class="form-control" type="hidden" id="idEditar" name="idEditar" value="<%= r.getId()%>" readonly>
+                                            <input class="form-control" type="hidden" id="matriculaEditar" name="matriculaEditar" value="<%= aluno.getMatricula()%>" readonly>
+
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -187,20 +187,22 @@
                                                                     <input class="form-control" type="date" id="data" name="data" placeholder="digite a nova data" value="<%= r.getData()%>">
                                                                 </li>
                                                             </ul>
+
+                                                            <ul class="nav justify-content-end">
+                                                                <li class="nav-item">
+                                                                    <select class="form-control" id="tipoDeOcorrencia" name="tipoDeOcorrencia">
+                                                                        <option hidden="true"><%=r.getTipoDeOcorrencia()%></option>
+                                                                        <option>Pais</option>
+                                                                        <option>Professor</option>
+                                                                        <option>Requerimento</option>
+                                                                        <option>Servidores</option>
+                                                                    </select>
+                                                                </li>
+                                                            </ul>
                                                         </nav>
                                                     </div>
                                                     <div class="card-body">
-
-                                                        <label for="tipoDeOcorrencia">Tipo de ocorrencia</label>
-                                                        <select class="form-control col-md-12" id="tipoDeOcorrencia" name="tipoDeOcorrencia">
-                                                            <option hidden="true"><%=r.getTipoDeOcorrencia()%></option>
-                                                            <option>Pais</option>
-                                                            <option>Professor</option>
-                                                            <option>Requerimento</option>
-                                                            <option>Servidores</option>
-                                                        </select>
-                                                        <br>    
-                                                        <textarea class="form-control"  rows="5" id="descricao" name="descricao" placeholder="DescriÃ§Ã£o sobre a ocorrÃªncia"><%= r.getDescricao()%></textarea>
+                                                        <textarea class="form-control"  rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"><%= r.getDescricao()%></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,9 +215,15 @@
                                         </div>
                                     </div>  
                                 </div>
-                                <form>
-                            </div>                                 
-                            <% }%>
+                            </div>   
+                        </form>
+                        <% }
+                        } else {
+                        %> 
+                        <div class="col-12 text-center">
+                            <br><h4 class="text-alert"> <i class="fas fa-exclamation-triangle fa-lg"></i> Não há registros</h4><br>
+                        </div>
+                        <%}%>
                     </div>
                 </div>
             </div>

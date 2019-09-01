@@ -72,7 +72,7 @@ public class RegistroServlet extends HttpServlet {
         }
 
         if (acao.equals("editar")) {              
-            String id = request.getParameter("id");
+            String id = request.getParameter("idEditar");
             Long idLong = Long.parseLong(id);
             
             GenericDAO<Registro> dao = new GenericDAO();

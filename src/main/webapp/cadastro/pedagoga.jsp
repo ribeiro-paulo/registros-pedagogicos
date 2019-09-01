@@ -24,8 +24,14 @@
 
     <body class="body">
 
-    <nav class="navbar navbar-light" id="background-blue">
-        <a class="navbar-brand" href="#"><img src="../imagens/logo.png" width="auto" height="70px"></a>
+    <nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 3%">
+        <div class="col-12">
+            <h3>
+                <a class="text-white"> 
+                    <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
+                </a>
+            </h3>
+        </div>
     </nav>
     <div class="container">
         <div class="row justify-content-center">
@@ -63,17 +69,17 @@
 
 
                             </div> 
-                            
-                            <div class="form-row">
-                                <div class="form-group col-lg-12 text-center">
-                                    <button class="btn btn-primary btn-lg btn-block" name="acao" type="submit" value="Cadastrar" id="background-blue">Cadastrar-se</button>
-                                </div>
 
-                                <div class="col-md-12 text-center">
-                                    <label>Já possui cadastro?</label>
-                                    <a class="link" href="../index.jsp"><b class="icon-blue">Entrar</b></a>
-                                </div>
+
+                            <div class="form-group col-lg-12 text-center">
+                                <button class="btn btn-primary btn-lg btn-block" name="acao" type="submit" value="Cadastrar" id="background-blue">Cadastrar-se</button>
                             </div>
+
+                            <div class="col-md-12 text-center">
+                                <label>Já possui cadastro?</label>
+                                <a class="link" href="../index.jsp"><b class="icon-blue">Entrar</b></a>
+                            </div>
+
                         </form>
                     </div>
                 </div>

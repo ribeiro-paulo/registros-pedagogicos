@@ -1,11 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="pt">
     <head>
         <!-- Required meta tags -->
-        <title>Registros PedagÃ³gicos</title>
+        <title>Registros Pedagógicos</title>
         <meta charset="utf-8">  
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
@@ -23,9 +22,14 @@
     </head>
 
     <body class="body">
-
-    <nav class="navbar navbar-light" id="background-blue">
-        <a class="navbar-brand" href="#"><img src="imagens/logo.png" width="auto" height="70px"></a>
+    <nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 3%">
+        <div class="col-12">
+            <h3>
+                <a class="text-white"> 
+                    <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
+                </a>
+            </h3>
+        </div>
     </nav>
     <div class="container">
         <div class="row justify-content-center">
@@ -36,12 +40,12 @@
                         <form action="/registros_pedagogicos/LoginServlet" method="post">
                             <section>
                                 <div class="form-group">
-                                    <label id="label" for="nome">UsuÃ¡rio ou SIAPE</label>
-                                    <input class="form-control validate" type="text" placeholder="Nome de usuÃ¡rio ou matrÃ­cula SIAPE" id="usuario" name="usuario" required>
+                                    <label id="label" for="nome">Usuário ou SIAPE</label>
+                                    <input class="form-control validate" type="text" placeholder="Insira seu Usuário ou SIAPE" id="usuario" name="usuario" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="senha">Senha</label>
-                                    <input class="form-control" type="password" placeholder="Senha de usuÃ¡rio" id="senha" name="senha" required>
+                                    <input class="form-control" type="password" placeholder="Senha de usuário" id="senha" name="senha" required>
                                 </div>
 
                                 <div class="form-group col-lg-12 text-center">
@@ -49,7 +53,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <label>Ainda nÃ£o possui cadasto?</label>
+                                    <label>Ainda não possui cadasto?</label>
                                     <a class="link" href="cadastro/pedagoga.jsp"><b class="icon-blue">Registre-se agora</b></a>
                                 </div>
                             </section>
@@ -59,6 +63,6 @@
             </div>
         </div> 
     </div>
-    <jsp:include page="footer.jsp"/>
 </body>
+<jsp:include page="footer.jsp"/>
 </html>

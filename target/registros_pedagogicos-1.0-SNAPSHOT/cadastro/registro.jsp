@@ -40,12 +40,9 @@
 
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
-
-                    <a class="text-light nav-link" href="../jsp/index.jsp"> <h4><i class="fa fa-arrow-left mr-1"></i></h4> </a>
-                    <h4 class="text-light"><b> <%= aluno.getNome()%> </b></h4>
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"> <i class="fa fa-arrow-left mr-1"></i> <b> <%= aluno.getNome()%> </b></a>
                 </nav>
-
-                <div class="col-12 card mb-5 border-0">
+                <div class="card mb-5 border-0 col-12">
                     <br>
                     <form method="post" name="dados_cadastro" action="/registros_pedagogicos/RegistroServlet">
                         <div class="form-row">
