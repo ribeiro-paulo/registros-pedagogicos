@@ -4,7 +4,6 @@
     Author     : Paulo Ribeiro
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -22,7 +21,7 @@
 <html>
     <head>
         <!-- Required meta tags -->
-        <title>Registros PedagÃ³gicos</title>
+        <title>Registros Pedagógicos</title>
         <meta charset="utf-8">  
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.css"/>
@@ -77,8 +76,8 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="matricula">MatrÃ­cula</label>
-                                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="MatrÃ­cula do discente" value="<%=aluno.getMatricula()%>" readonly>
+                                    <label for="matricula">Matrícula</label>
+                                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" value="<%=aluno.getMatricula()%>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +86,7 @@
 
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Ãšltimos registros</a>
+                                <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>">Ver desempenho</a>
@@ -203,7 +202,7 @@
                                                         </nav>
                                                     </div>
                                                     <div class="card-body">
-                                                        <textarea class="form-control"  rows="5" id="descricao" name="descricao" placeholder="DescriÃ§Ã£o sobre a ocorrÃªncia"><%= r.getDescricao()%></textarea>
+                                                        <textarea class="form-control"  rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"><%= r.getDescricao()%></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -222,7 +221,7 @@
                         } else {
                         %> 
                         <div class="col-12 text-center">
-                            <br><h4 class="text-alert"> <i class="fas fa-exclamation-triangle fa-lg"></i> NÃ£o hÃ¡ registros</h4><br>
+                            <br><h4 class="text-alert"> <i class="fas fa-exclamation-triangle fa-lg"></i> Não há registros</h4><br>
                         </div>
                         <%}%>
                     </div>

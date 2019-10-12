@@ -1,9 +1,8 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 2%">
     <a class="navbar-brand text-white nav-link" > 
-        <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> Pedag√≥gicos
+        <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> PedagÛgicos
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#col" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,9 +12,9 @@
     <div class="collapse navbar-collapse" id="col">
         <ul class="navbar-nav mr-auto">
         </ul>
-        <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relat√≥rios</a>
+        <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relatÛrios</a>
         <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModa"><i class="fas fa-user-edit fa-lg"></i> Editar perfil</a>
-        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sess√£o</a>
+        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sess„o</a>
     </div>
 </nav>
 
@@ -37,7 +36,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#avancado" class="nav-link" data-toggle="tab" role="tab">
-                        Avan√ßado
+                        AvanÁado
                     </a>
                 </li>
             </ul>
@@ -45,7 +44,7 @@
             <div class="modal-body tab-content">
                 <div class="tab-pane fade in show active" id="geral" role="tabpanel">
                     <div class="alert alert-warning" role="alert">
-                        <strong>Aten√ß√£o!</strong> Ao clicar em ALTERAR os dados ser√£o salvos em sua conta.
+                        <strong>AtenÁ„o!</strong> Ao clicar em ALTERAR os dados ser„o salvos em sua conta.
                     </div>
                     <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
                         <div class="form-row">
@@ -60,8 +59,8 @@
                                     <input class="form-control" type="text" placeholder="SIAPE" id="usuario" name="siape" maxlength="12" required value="<c:out value="${usuario.siape}"></c:out>"/>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="usuario">Usu√°rio</label>
-                                    <input class="form-control" type="text" placeholder="Nome de usu√°rio" name="usuario" id="usuario" maxlength="40" readonly value="<c:out value="${usuario.usuario}"></c:out>"/>
+                                    <label for="usuario">Usu·rio</label>
+                                    <input class="form-control" type="text" placeholder="Nome de usu·rio" name="usuario" id="usuario" maxlength="40" readonly value="<c:out value="${usuario.usuario}"></c:out>"/>
                             </div>
 
                         </div>
@@ -76,7 +75,7 @@
 
                 <div class="tab-pane fade in show" id="avancado" role="tabpanel">
                     <div class="alert alert-danger" role="alert">
-                        <strong>Aten√ß√£o!</strong> Ao clicar em ALTERAR a sua nova senha ser√° salva em sua conta.
+                        <strong>AtenÁ„o!</strong> Ao clicar em ALTERAR a sua nova senha ser· salva em sua conta.
                     </div>
                     <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
                         <div class="form-row">
@@ -113,18 +112,18 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado">Encerrar sess√£o</h5>
+                <h5 class="modal-title" id="TituloModalCentralizado">Encerrar sess„o</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="alert alert-danger" role="alert">
-                    <strong>Aten√ß√£o!</strong> Deseja mesmo encerrar a sess√£o da sua conta?
+                    <strong>AtenÁ„o!</strong> Deseja mesmo encerrar a sess„o da sua conta?
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">N√£o</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">N„o</button>
 
                 <form action="/registros_pedagogicos/LoginServlet" method="get">
                     <button type="submit" class="btn btn-danger">Sim</button>

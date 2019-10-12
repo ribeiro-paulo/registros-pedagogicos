@@ -66,7 +66,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <p> A Registros Pedagógicos é uma ferramenta automatizada que visa uma forma mais organizada auxiliar os registros pedagógicos.</p>
+                        <p> Registros Pedagógicos é uma ferramenta automatizada que visa uma forma mais organizada auxiliar os registros pedagógicos.</p>
                     </li>
                     </li>
                 </ul>

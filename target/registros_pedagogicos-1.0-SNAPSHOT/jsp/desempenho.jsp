@@ -10,7 +10,6 @@
     Author     : Paulo Ribeiro
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -28,7 +27,7 @@
 <html>
     <head>
         <!-- Required meta tags -->
-        <title>Registros PedagÃ³gicos</title>
+        <title>Registros Pedagógicos</title>
         <meta charset="utf-8">  
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.css"/>
@@ -85,8 +84,8 @@
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <label for="matricula">MatrÃ­cula</label>
-                                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="MatrÃ­cula do discente" value="<%=aluno.getMatricula()%>" readonly>
+                                    <label for="matricula">Matrícula</label>
+                                    <input class="form-control" type="text" id="matricula" name="matricula" placeholder="Matrícula do discente" value="<%=aluno.getMatricula()%>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +93,7 @@
                         <br>
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Ãšltimos registros</a>
+                                <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>">Ver desempenho</a>
