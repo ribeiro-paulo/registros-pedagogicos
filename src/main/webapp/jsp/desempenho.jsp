@@ -1,15 +1,3 @@
-<%-- 
-    Document   : home
-    Created on : 15/05/2019, 11:54:23
-    Author     : Paulo Ribeiro
---%>
-
-<%-- 
-    Document   : home
-    Created on : 15/05/2019, 11:54:23
-    Author     : Paulo Ribeiro
---%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -36,10 +24,9 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.css"/>
         <link rel="stylesheet" href="../css/bootstrap/js/bootstrap.js">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <script src="../js/fontAwesome-pro/fontAwesome.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
 
     </head>
 
@@ -55,7 +42,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
 
-                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-arrow-left mr-1"></i> Pasta de <b><%= aluno.getNome()%> </a>
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-arrow-alt-circle-left fa-lg"></i> Pasta de <b><%= aluno.getNome()%> </a>
                     
                 </nav>
 
@@ -93,10 +80,10 @@
                         <br>
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>">Últimos registros</a>
+                                <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>&status=false"><i class="far fa-clone fa-lg"></i> Últimos registros</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>">Ver desempenho</a>
+                                <a class="nav-link active" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="far fa-chart-line-down fa-lg"></i> Ver desempenho</a>
                             </li>
                         </ul>
                         <br>

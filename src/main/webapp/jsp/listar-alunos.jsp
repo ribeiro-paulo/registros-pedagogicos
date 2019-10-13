@@ -7,11 +7,11 @@
         <caption>Lista de alunos</caption>
         <thead>
             <tr>
-                <th>Nome<i class="fa fa-sort float-right"></i></th>
-                <th>Matrícula<i class="fa fa-sort float-right"></i></th>
-                <th>Nível<i class="fa fa-sort float-right"></i></th>
-                <th>Turma<i class="fa fa-sort float-right"></i></th>
-                <th>Selecione<i class="fa fa-sort float-right"></i></th>
+                <th>Nome<i class="fa fa-sort-alt float-right"></i></th>
+                <th>Matrícula<i class="fa fa-sort-alt float-right"></i></th>
+                <th>Nível<i class="fa fa-sort-alt float-right"></i></th>
+                <th>Turma<i class="fa fa-sort-alt float-right"></i></th>
+                <th>Selecione<i class="fa fa-sort-alt float-right"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +24,11 @@
                 <td><%=alunos.get(i).getMatricula()%></td>
                 <td><%=alunos.get(i).getNivel()%></td>
                 <td><%=alunos.get(i).getTurma()%></td>
-                <td class="text-center"><a  class="btn btn-primary" id="background-blue" href="../cadastro/registro.jsp?matricula=<%=alunos.get(i).getMatricula()%>">Selecionar</a></td>
+                <td class="text-center">
+                    <a  class="btn text-white" id="background-blue" href="../cadastro/registro.jsp?matricula=<%=alunos.get(i).getMatricula()%>">
+                         Selecionar <i class="fal fa-arrow-circle-right fa-lg"></i>
+                    </a>
+                </td>
             </tr>
             <% }%>
         </tbody>
@@ -39,13 +43,5 @@
         </tfoot>
     </table>
 </div>
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.js"></script>
-<script src="../js/mdb.min.js"></script>
-<script src="../js/general.js"></script>
-<script src="../js/jquery.mask.min.js"></script>
-<script src="../js/mascaras.js"></script>
-<script src="../js/addons/datatables.min.js"></script>
 
 <script src="../js/filtro/aluno.js"></script>

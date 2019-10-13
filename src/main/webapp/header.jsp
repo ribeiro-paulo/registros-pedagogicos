@@ -1,50 +1,54 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 2%">
-    <a class="navbar-brand text-white nav-link" > 
-        <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#col" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <a class="text-white"><span class="navbar-toggler-icon"></span></a>
-    </button>
+    <div class="container-fluid">
+        <a class="navbar-brand text-white nav-link" > 
+            <i class="far fa-file-signature fa-lg"></i><b> Registros</b> Pedagógicos
+        </a>
 
-    <div class="collapse navbar-collapse" id="col">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relatórios</a>
-        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModa"><i class="fas fa-user-edit fa-lg"></i> Editar perfil</a>
-        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</a>
+        <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#col" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="text-white"><i class="fas fa-bars fa-lg"></i></a>
+        </button>
+
+        <div class="collapse navbar-collapse" id="col">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relatórios</a>
+            <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModa"><i class="fas fa-user-edit fa-lg"></i> Editar perfil</a>
+            <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</a>
+        </div>
     </div>
 </nav>
 
-<div class="modal fade" style="color: black" id="exampleModa" tabindex="-1" role="dialog" aria-labelledby="exampleModaLabel" aria-hidden="true">
+<div class="modal fade text-black" id="exampleModa" tabindex="-1" role="dialog" aria-labelledby="exampleModaLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header border-0">
-                <h3 class="modal-title text-center" >Meu Perfil</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>   
+            <div class="modal-header border-0 text-white" id="background-blue">
+                <h4 class="modal-title" ><i class="fas fa-user-edit fa-lg"></i> Editar perfil</h4>
+                <a href="" class="close text-white" data-dismiss="modal" aria-label="Cancelar">
+                    <i class="fas fa-times-circle fa-lg"></i>
+                </a> 
             </div>
 
+            <br>
             <ul class="nav nav-tabs">
                 <li class="nav-item active">
                     <a href="#geral" class="nav-link active" data-toggle="tab" role="tab">
-                        Geral
+                        <i class="fal fa-clipboard-user fa-lg"></i> Geral
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#avancado" class="nav-link" data-toggle="tab" role="tab">
-                        Avançado
+                        <i class="far fa-user-lock fa-lg"></i> Senha
                     </a>
                 </li>
             </ul>
 
             <div class="modal-body tab-content">
                 <div class="tab-pane fade in show active" id="geral" role="tabpanel">
-                    <div class="alert alert-warning" role="alert">
-                        <strong>Atenção!</strong> Ao clicar em ALTERAR os dados serão salvos em sua conta.
+                    <div class="alert alert-info" role="alert">
+                        <h5 class="alert-heading"><i class="far fa-comment-alt-exclamation fa-lg"></i> Atenção</h5>
+                        <p> Ao clicar em <b>ALTERAR</b> os dados serão salvos em sua conta.</p>
                     </div>
                     <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
                         <div class="form-row">
@@ -62,21 +66,22 @@
                                     <label for="usuario">Usuário</label>
                                     <input class="form-control" type="text" placeholder="Nome de usuário" name="usuario" id="usuario" maxlength="40" readonly value="<c:out value="${usuario.usuario}"></c:out>"/>
                             </div>
-
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="submit" name="acao" value="alterarUsuario" class="btn btn-primary">Alterar</button>
+                            <button type="submit" name="acao" value="alterarUsuario" class="btn btn-primary"><i class="far fa-save fa-lg"></i> Salvar alterações</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
                         </div>
 
                     </form>
                 </div>
 
                 <div class="tab-pane fade in show" id="avancado" role="tabpanel">
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Atenção!</strong> Ao clicar em ALTERAR a sua nova senha será salva em sua conta.
+                    <div class="alert alert-warning" role="alert">
+                        <h5 class="alert-heading"><i class="far fa-key fa-lg"></i> Atenção</h5>
+                        <p> Ao clicar em <b>ALTERAR</b> a sua nova senha será salva em sua conta.</p>
                     </div>
+                    
                     <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
                         <div class="form-row">
                             <div class="form-group col-md-12">
@@ -97,8 +102,8 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="submit" name="acao" value="alterarSenha" class="btn btn-primary">Alterar</button>
+                            <button type="submit" name="acao" value="alterarSenha" class="btn btn-primary"><i class="far fa-user-lock fa-lg"></i> Salvar senha</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
                         </div>
 
                     </form>
@@ -111,11 +116,11 @@
 <div class="modal fade" style="color: black"  id="ModalSair" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header text-white bg-blue">
                 <h5 class="modal-title" id="TituloModalCentralizado">Encerrar sessão</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <a href="" class="close text-white" data-dismiss="modal" aria-label="Cancelar">
+                    <i class="fas fa-times-circle fa-lg"></i>
+                </a> 
             </div>
             <div class="modal-body">
                 <div class="alert alert-danger" role="alert">
@@ -123,11 +128,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Não</button>
-
                 <form action="/registros_pedagogicos/LoginServlet" method="get">
-                    <button type="submit" class="btn btn-danger">Sim</button>
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Sim, encerrar sessão</button>
                 </form>
+
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
             </div>
         </div>
     </div>

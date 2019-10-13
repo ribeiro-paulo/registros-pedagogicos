@@ -1,5 +1,7 @@
 servlet/ListarRegistroServlet.class
+tests/NewServlet.class
 util/ConnectionFactory.class
+tests/AdicionarAlunos.class
 servlet/RegistroServlet.class
 servlet/CadastrarPedagogaServlet.class
 model/bean/Aluno.class
@@ -14,3 +16,4 @@ model/dao/GenericDAO.class
 servlet/AlterarPedagogaServlet.class
 tests/InserirAlunos.class
 model/dao/RegistroDAO.class
+tests/TesteDAO.class

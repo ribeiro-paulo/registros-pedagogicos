@@ -13,20 +13,19 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css"/>
         <link rel="stylesheet" href="css/bootstrap/js/bootstrap.js">
+        <script src="js/fontAwesome-pro/fontAwesome.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
     </head>
 
     <body class="body">
     <nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 3%">
         <div class="col-12">
             <h3>
-                <a class="text-white"> 
-                    <i class="fas fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
+                <a class="text-center text-white"> 
+                    <i class="far fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
                 </a>
             </h3>
         </div>
@@ -49,7 +48,7 @@
                                 </div>
 
                                 <div class="form-group col-lg-12 text-center">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit" id="background-blue">Entrar</button>
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit" id="background-blue"><i class="far fa-sign-in-alt fa-lg"></i> Entrar</button>
                                 </div>
 
                                 <div class="text-center">

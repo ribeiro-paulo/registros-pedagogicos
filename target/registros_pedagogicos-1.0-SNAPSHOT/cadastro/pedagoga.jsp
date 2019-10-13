@@ -14,11 +14,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.css"/>
         <link rel="stylesheet" href="../css/bootstrap/js/bootstrap.js">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <script src="../js/fontAwesome-pro/fontAwesome.js"></script>
 
     </head>
 
@@ -72,7 +68,7 @@
 
 
                             <div class="form-group col-lg-12 text-center">
-                                <button class="btn btn-primary btn-lg btn-block" name="acao" type="submit" value="Cadastrar" id="background-blue">Cadastrar-se</button>
+                                <button class="btn btn-primary btn-lg btn-block" name="acao" type="submit" value="Cadastrar" id="background-blue"><i class="far fa-user-check fa-lg"></i> Cadastrar-se</button>
                             </div>
 
                             <div class="col-md-12 text-center">

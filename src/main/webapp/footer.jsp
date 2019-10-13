@@ -66,7 +66,7 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <p> Registros Pedagógicos é uma ferramenta automatizada que visa uma forma mais organizada auxiliar os registros pedagógicos.</p>
+                        <p class="text-justify"> Registros Pedagógicos é uma ferramenta que visa auxiliar o acompanhamento pedagógico do Departamento Acadêmico de Informação e Comunicação(DAIC).</p>
                     </li>
                     </li>
                 </ul>

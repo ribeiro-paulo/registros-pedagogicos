@@ -39,7 +39,7 @@ public class AlterarPedagogaServlet extends HttpServlet {
             GenericDAO<Pedagoga> daoP = new GenericDAO<>();
             daoP.saveOrUpdate(p);
 
-            response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
+            response.sendRedirect("../registros_pedagogicos/jsp/index.jsp?status=dados_alterados");
 
         }
 
@@ -56,9 +56,9 @@ public class AlterarPedagogaServlet extends HttpServlet {
                 GenericDAO<Pedagoga> daoP = new GenericDAO<>();
                 daoP.saveOrUpdate(p);
 
-                response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
+                response.sendRedirect("../registros_pedagogicos/jsp/index.jsp?status=senha_alterada");
             } else {
-                out.println("Digite as senhas corretamente!");
+                response.sendRedirect("../registros_pedagogicos/jsp/index.jsp?status=erro");
             }
 
         }
