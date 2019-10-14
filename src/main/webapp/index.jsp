@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="css/bootstrap/js/bootstrap.js">
         <script src="js/fontAwesome-pro/fontAwesome.js"></script>
 
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+        <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
     </head>
 
     <body class="body">
@@ -25,7 +25,7 @@
         <div class="col-12">
             <h3>
                 <a class="text-center text-white"> 
-                    <i class="far fa-file-signature fa-lg"></i><b>Registros</b> Pedagógicos
+                    <i class="far fa-file-signature fa-lg"></i><b> Registros</b> Pedagógicos
                 </a>
             </h3>
         </div>
@@ -36,6 +36,19 @@
                 <div class="title">Dados para login</div>
                 <div class="tab-content card mb-5">
                     <div class="mt-4 mx-4">
+                        <% if (request.getQueryString() != null) { %>
+                        <% if (request.getParameter("status").equals("erro")) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h6 class="alert-heading">
+                                <b> <i class="far fa-user-times fa-1x"></i> Usuário</b> ou 
+                                <b><i class="far fa-lock fa-1x"></i> Senha </b> inválido
+                            </h6>
+                        </div>
+                        <%}%>
+                        <%}%>
                         <form action="/registros_pedagogicos/LoginServlet" method="post">
                             <section>
                                 <div class="form-group">

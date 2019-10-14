@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.Session"%>
 <%@page import="java.time.LocalDateTime"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -22,6 +23,11 @@
     </head>
 
     <body class="body">
+        
+        <%if (request.getSession().getAttribute("usuario") == null) {
+            response.sendRedirect("/registros_pedagogicos/erro/erro.jsp");
+        }%>
+        
         <jsp:include page="../header.jsp"/>
 
         <div class="container">
@@ -31,72 +37,74 @@
             </nav>
 
             <div class=" card mb-5 border-0 px-4 py-4">
-                
-                <% LocalDateTime now = LocalDateTime.now(); 
-                    int hora = now.getHour();
-                    
-                %>
 
-                <%  if (request.getQueryString() != null) { //verifica se tem valor na url%>
+                <% LocalDateTime now = LocalDateTime.now();
+                    int hora = now.getHour();%>
 
-                    <%if (request.getParameter("status").equals("dados_alterados")) {%>
-                    <div class="alert alert-success" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="alert-heading"><i class="far fa-user-check fa-lg"></i> Dados atualizados com sucesso!</h4>
+                <% if (request.getQueryString() != null) { //verifica se tem valor na url%>
 
-                        <p>Parabéns, os dados foram alterados com êxito, confira no seu perfil.</p>
-                    </div>
-                    <%}%>
+                <%if (request.getParameter("status").equals("dados_alterados")) {%>
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="alert-heading"><i class="far fa-user-check fa-lg"></i> Dados atualizados com sucesso!</h4>
 
-                    <%if (request.getParameter("status").equals("senha_alterada")) {%>
-                    <div class="alert alert-success" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="alert-heading"><i class="far fa-key fa-lg"></i> Senha atualizada com sucesso!</h4>
-
-                        <p>Parabéns, sua senha foi alterada com êxito, confira no seu perfil.</p>
-                    </div>
-                    <%}%>
-                    
-                    <%if (request.getParameter("status").equals("erro")) {%>
-                    <div class="alert alert-danger" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="alert-heading"><i class="far fa-comment-alt-exclamation fa-lg"></i> Ops!</h4>
-
-                        <p>Senha inválida, tente novamente.</p>
-                    </div>
-                    <%}%>
+                    <p>Parabéns, os dados foram alterados com êxito, confira no seu perfil.</p>
+                </div>
                 <%}%>
-                
+
+                <%if (request.getParameter("status").equals("senha_alterada")) {%>
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="alert-heading"><i class="far fa-key fa-lg"></i> Senha atualizada com sucesso!</h4>
+
+                    <p>Parabéns, sua senha foi alterada com êxito, confira no seu perfil.</p>
+                </div>
+                <%}%>
+
+                <%if (request.getParameter("status").equals("erro")) {%>
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="alert-heading"><i class="far fa-comment-alt-exclamation fa-lg"></i> Ops!</h4>
+
+                    <p>Senha inválida, tente novamente.</p>
+                </div>
+                <%}%>
+                <%}%>
+
+                <% if(request.getQueryString() != null){ %>
+
                 <% if(hora > 0 && hora < 13 && request.getQueryString() == null){ %>
-                        <div class="alert alert-info" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <h5 class="alert-heading"><i class="fal fa-smile-wink fa-lg"></i> Bom dia, <b> ${usuario.nome} </b></h5>
-                        </div>
-                    <%}%>
-                    <% if(hora > 13 && hora < 18 && request.getQueryString() == null){ %>
-                        <div class="alert alert-info" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <h5 class="alert-heading"><i class="fal fa-smile-wink fa-lg"></i> Boa tarde, <b> ${usuario.nome} </b></h5>
-                        </div>
-                    <%}%>
-                    <% if(hora > 18 && hora < 24 && request.getQueryString() == null){ %>
-                        <div class="alert alert-danger" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <h4 class="alert-heading"><i class="far fa-comment-alt-exclamation fa-lg"></i> Bom dia ${usuario.usuario}</h4>
-                        </div>
-                    <%}%>
+                <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="alert-heading"><i class="fal fa-smile-wink fa-lg"></i> Bom dia, <b> <%="a"%> </b></h5>
+                </div>
+                <%}%>
+                <% if (hora > 13 && hora < 18 && request.getQueryString() == null) { %>
+                <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="alert-heading"><i class="fal fa-smile-wink fa-lg"></i> Boa tarde, <b> ${usuario.nome} </b></h5>
+                </div>
+                <%}%>
+
+                <% if (hora > 18 && hora < 24 && request.getParameter("status").equals("1")) { %>
+                <div class="alert alert-info" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="alert-heading"><i class="fal fa-smile-wink fa-lg"></i> Boa noite, <b> ${usuario.nome} </b></h5>
+                </div>
+                <%}
+                    }%>
 
                 <%-- Chama o modal ao clicar em novo registro --%>  
                 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">

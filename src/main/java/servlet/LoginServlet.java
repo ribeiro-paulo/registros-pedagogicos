@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        request.getSession().setAttribute("usuario", null);
+        request.getSession().setAttribute("usuario", null);
         response.sendRedirect("/registros_pedagogicos/index.jsp");
     }
 
@@ -41,9 +41,9 @@ public class LoginServlet extends HttpServlet {
         Pedagoga p;
 
         if (idPedagoga == null) {
-            response.sendRedirect("/registros_pedagogicos/erros/login.jsp");
+            response.sendRedirect("/registros_pedagogicos?status=erro");
         } else if (idPedagoga == -1) {
-            out.println("-1");
+            response.sendRedirect("/registros_pedagogicos?status=erro");
         } else {
             try {
                 GenericDAO<Pedagoga> pDao2 = new GenericDAO<>();
@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
                     request.getSession().setAttribute("usuario", p);
                     response.sendRedirect("/registros_pedagogicos/jsp/index.jsp?status=1");
                 } else {
-                    out.println("ERRO");
+                    response.sendRedirect("/registros_pedagogicos?status=erro");
                 }
             } catch (IOException e) {
                 out.println("ERRO " + e.getMessage());

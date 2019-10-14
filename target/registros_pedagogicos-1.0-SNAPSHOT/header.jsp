@@ -81,7 +81,7 @@
                         <h5 class="alert-heading"><i class="far fa-key fa-lg"></i> Atenção</h5>
                         <p> Ao clicar em <b>ALTERAR</b> a sua nova senha será salva em sua conta.</p>
                     </div>
-                    
+
                     <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
                         <div class="form-row">
                             <div class="form-group col-md-12">
