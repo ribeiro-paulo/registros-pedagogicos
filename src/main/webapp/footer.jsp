@@ -8,7 +8,7 @@
         <div class="row">
 
             <!-- Grid column -->
-            <div class="col-md-3 mt-md-0 mt-3">
+            <div class="col-md-4 mt-md-0 mt-3">
 
                 <!-- Content -->
                 <h6 class="text-uppercase"><i class="fas fa-map-marker-alt"></i><b>  Encontre-nos</b><br></h6>
@@ -20,53 +20,26 @@
             <hr class="clearfix w-100 d-md-none pb-3">
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-md-4 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h6 class="text-uppercase"><i class="fas fa-phone"></i><b>  Contato</b></h6>
+                <h6 class="text-uppercase"><i class="fas fa-phone-alt"></i><b>  Contato</b></h6>
 
                 <ul class="list-unstyled">
                     <li>
                         3621-6717 (DAIC)
                     </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h6 class="text-uppercase"><i class="fas fa-link"></i><b>  Redes sociais</b><br></h6>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <i class="fab fa-facebook-square"></i> <a href="#" style="color: white"> Facebook</a><br>
-                        <i class="fab fa-instagram"></i> <a href="#" style="color: white"> Instagram</a><br>
-                    </li>
-                    </li>
                 </ul>
             </div>
-
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-md-4 mb-md-0 mb-3">
 
                 <!-- Links -->
                 <h6 class="text-uppercase"><i class="fas fa-file-alt"></i><b>  Sobre nós</b><br></h6>
 
                 <ul class="list-unstyled">
                     <li>
-                        <p class="text-justify"> Registros Pedagógicos é uma ferramenta que visa auxiliar o acompanhamento pedagógico do Departamento Acadêmico de Informação e Comunicação(DAIC).</p>
+                        <p class="text-justify"> Registros Pedagógicos é uma ferramenta de acompanhamento pedagógico do Departamento Acadêmico de Informação e Comunicação(DAIC).</p>
                     </li>
                     </li>
                 </ul>

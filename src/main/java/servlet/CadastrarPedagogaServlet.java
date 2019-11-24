@@ -27,6 +27,7 @@ public class CadastrarPedagogaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        if(request.getParameter("senha").equals(request.getParameter("confirmar_senha")) && request.getParameter("siape").matches("[0-9]+")){
         Pedagoga pedagoga = new Pedagoga();
         GenericDAO<Pedagoga> dao = new GenericDAO<>();
 
@@ -39,6 +40,10 @@ public class CadastrarPedagogaServlet extends HttpServlet {
 
         request.getSession().setAttribute("usuario", pedagoga);
         response.sendRedirect("../registros_pedagogicos/jsp/index.jsp");
+        
+        }else{
+            response.sendRedirect("../registros_pedagogicos/cadastro/pedagoga.jsp?status=erro");
+        }
     }
 
 }

@@ -2,16 +2,17 @@
 <%@page import="model.dao.AlunoDAO"%>
 <%@page import="java.util.List"%>
 
+<h6 class="text-grey">Selecione um aluno</h6>
 <div class="table-responsive-lg">
     <table class="table table-sm table-striped table-bordered table-hover" id="table-aluno">
         <caption>Lista de alunos</caption>
         <thead>
             <tr>
-                <th>Nome<i class="fa fa-sort-alt float-right"></i></th>
-                <th>Matrícula<i class="fa fa-sort-alt float-right"></i></th>
-                <th>Nível<i class="fa fa-sort-alt float-right"></i></th>
-                <th>Turma<i class="fa fa-sort-alt float-right"></i></th>
-                <th>Selecione<i class="fa fa-sort-alt float-right"></i></th>
+                <th>Nome<i class="fa fa-sort float-right"></i></th>
+                <th>Matrícula<i class="fa fa-sort float-right"></i></th>
+                <th>Nível<i class="fa fa-sort float-right"></i></th>
+                <th>Turma<i class="fa fa-sort float-right"></i></th>
+                <th>Selecione<i class="fa fa-sort float-right"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +27,7 @@
                 <td><%=alunos.get(i).getTurma()%></td>
                 <td class="text-center">
                     <a  class="btn text-white" id="background-blue" href="../cadastro/registro.jsp?matricula=<%=alunos.get(i).getMatricula()%>">
-                         Selecionar <i class="fal fa-arrow-circle-right fa-lg"></i>
+                         Selecionar <i class="fas fa-arrow-alt-circle-right"></i>
                     </a>
                 </td>
             </tr>

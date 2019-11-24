@@ -1,9 +1,7 @@
-/home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/tests/NewServlet.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/util/ConnectionFactory.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/servlet/RegistroServlet.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/model/dao/GenericDAO.java
-/home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/tests/TesteDAO.java
-/home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/tests/InserirAlunos.java
+/home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/servlet/InserirAlunos.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/model/dao/RegistroDAO.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/model/dao/PedagogaDAO.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/model/bean/Registro.java
@@ -15,5 +13,4 @@
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/servlet/AlterarPedagogaServlet.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/servlet/LoginServlet.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/servlet/ListarRegistroServlet.java
-/home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/tests/AdicionarAlunos.java
 /home/paulo/Área de trabalho/projetos/registros-pedagogicos/src/main/java/model/bean/Aux.java

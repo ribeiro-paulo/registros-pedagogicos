@@ -18,13 +18,10 @@
         <title>Registros Pedagógicos</title>
         <meta charset="utf-8">  
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../css/bootstrap/bootstrap.css"/>
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/bootstrap/mdb.css"/>
         <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.css"/>
-        <link rel="stylesheet" href="../css/bootstrap/js/bootstrap.js">
         <script src="../js/fontAwesome-pro/fontAwesome.js"></script>
+        <script src="https://kit.fontawesome.com/bff2ac77b8.js" crossorigin="anonymous"></script>
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
 
@@ -43,7 +40,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
 
                     <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-arrow-alt-circle-left fa-lg"></i> Pasta de <b><%= aluno.getNome()%> </a>
-                    
+
                 </nav>
 
                 <div class=" card mb-5 border-0">
@@ -51,11 +48,11 @@
                     <div class="col-12">
                         <br> 
                         <div class="form-row">
-                            <div class="col-sm-2 text-center">
-                                <img src="../imagens/usuario.png" class="img-thumbnail" readonly>
+                            <div class="col-lg-2 text-center border">
+                                <i class="text-grey fas fa-user fa-10x mt-1"></i>
                             </div>
 
-                            <div class="form-row col-md-10">
+                            <div class="form-row col-lg-10">
                                 <div class="form-group col-md-12">
                                     <label for="discente">Discente</label>
                                     <input class="form-control" type="text" id="discente" name="discente" maxlength="12" value="<%=aluno.getNome()%>" placeholder="Nome do discente" readonly>
@@ -83,7 +80,7 @@
                                 <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>&status=false"><i class="far fa-clone fa-lg"></i> Últimos registros</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="far fa-chart-line-down fa-lg"></i> Ver desempenho</a>
+                                <a class="nav-link active" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="fas fa-chart-bar fa-lg"></i> Ver desempenho</a>
                             </li>
                         </ul>
                         <br>

@@ -24,13 +24,10 @@
         <title>Registros Pedagógicos</title>
         <meta charset="utf-8">  
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../css/bootstrap/bootstrap.css"/>
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/bootstrap/mdb.css"/>
         <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.css"/>
+        <script src="https://kit.fontawesome.com/bff2ac77b8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../css/bootstrap/js/bootstrap.js">
-        <script src="../js/fontAwesome-pro/fontAwesome.js"></script>
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
     </head>
@@ -94,11 +91,11 @@
 
                     <!--feedback - fim-->
                     <div class="form-row">
-                        <div class="col-sm-2 text-center">
-                            <img src="../imagens/usuario.png" class="img-thumbnail" readonly>
+                        <div class="col-lg-2 text-center border">
+                            <i class="text-grey fas fa-user fa-10x mt-1"></i>
                         </div>
 
-                        <div class="form-row col-md-10">
+                        <div class="form-row col-lg-10">
                             <div class="form-group col-md-12">
                                 <label for="discente">Discente</label>
                                 <input class="form-control" type="text" id="discente" name="discente" maxlength="12" value="<%=aluno.getNome()%>" placeholder="Nome do discente" readonly>
@@ -127,7 +124,7 @@
                             <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>"><i class="far fa-clone fa-lg"></i> Últimos registros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="far fa-chart-line-down fa-lg"></i> Ver desempenho</a>
+                            <a class="nav-link" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="fas fa-chart-bar fa-lg"></i> Ver desempenho</a>
                         </li>
                     </ul>
 
@@ -142,7 +139,7 @@
                                 <div class="card-header">
                                     <nav class="navbar">
 
-                                        <a> Modificado em: <em> <%= r.getData()%> <i class="far fa-calendar-day fa-lg"></i> </em></a>
+                                        <a> Modificado em: <em> <%= r.getData()%> <i class="fas fa-calendar-check fa-lg"></i> </em></a>
                                         <ul class="nav justify-content-end">
                                             <li class="nav-item">
                                                 <a class="nav-link text-grey" href="" data-toggle="modal" data-target="#editar<%= r.getId()%>">
@@ -182,14 +179,14 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="alert alert-info" role="alert">
-                                            <h5 class="alert-heading"><i class="far fa-info-circle fa-lg"></i> <b>Aviso</b></h5>
+                                            <h5 class="alert-heading"><i class="fas fa-info-circle fa-lg"></i> <b>Aviso</b></h5>
                                             <p>Os dados abaixo serão <b>perdidos</b> após a confirmação de exclusão.</p>
                                         </div>
 
                                         <div class="card col-md-12">
                                             <div class="card-header">
                                                 <nav class="navbar">
-                                                    <a> Modificado em: <em> <%= r.getData()%> <i class="far fa-calendar-day fa-lg"></i> </em></a>     
+                                                    <a> Modificado em: <em> <%= r.getData()%> <i class="fas fa-calendar-check fa-lg"></i> </em></a>     
                                                 </nav>
                                             </div>
                                             <div class="card-body">
@@ -202,7 +199,7 @@
 
                                         <button type="submit" class="btn btn-danger" name="acao" value="confirmar"><i class="fas fa-trash-alt fa-lg"></i> Sim, excluir</button>
 
-                                        <button data-dismiss="modal" type="button" class="btn btn-primary"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
+                                        <button data-dismiss="modal" type="button" class="btn btn-secondary"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +207,7 @@
 
                         <!-- Modal Editar -->
                         <div id="editar<%= r.getId()%>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header bg-blue text-white">
                                         <h5>
@@ -227,7 +224,7 @@
                                     <div class="modal-body">
                                         
                                         <div class="alert alert-info" role="alert">
-                                            <h5 class="alert-heading"><i class="far fa-info-circle fa-lg"></i> <b>Aviso</b></h5>
+                                            <h5 class="alert-heading"><i class="fas fa-info-circle fa-lg"></i> <b>Aviso</b></h5>
                                             <p>Os dados abaixo serão <b>alterados</b> após a confirmação de de alteração.</p>
                                         </div>
                                         
@@ -271,7 +268,7 @@
 
                                     <%--  --%> 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-warning " name="acao" value="editar"><i class="far fa-save fa-lg"></i> Salvar alterações</button>
+                                        <button type="submit" class="btn btn-primary" name="acao" value="editar"><i class="fas fa-save fa-lg"></i> Salvar alterações</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
                                     </div>
                                 </div>  

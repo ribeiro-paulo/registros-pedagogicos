@@ -1,22 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<nav class="navbar navbar-expand-lg navbar-light" id="background-blue" style="margin-bottom: 2%">
-    <div class="container-fluid">
-        <a class="navbar-brand text-white nav-link" > 
-            <i class="far fa-file-signature fa-lg"></i><b> Registros</b> Pedagógicos
-        </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-blue mb-5">
+    <a class="navbar-brand text-white" > 
+        <i class="fas fa-file-alt fa-lg"></i><b> Registros</b> Pedagógicos
+    </a>
 
-        <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#col" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <a class="text-white"><i class="fas fa-bars fa-lg"></i></a>
-        </button>
+    <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#col" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="text-white"><i class="fas fa-bars fa-lg"></i></a>
+    </button>
 
-        <div class="collapse navbar-collapse" id="col">
-            <ul class="navbar-nav mr-auto">
-            </ul>
-            <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relatórios</a>
-            <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModa"><i class="fas fa-user-edit fa-lg"></i> Editar perfil</a>
-            <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</a>
-        </div>
+    <div class="collapse navbar-collapse" id="col">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relatórios</a>
+        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModa"><i class="fas fa-user-edit fa-lg"></i> Editar perfil</a>
+        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</a>
     </div>
 </nav>
 
@@ -24,7 +22,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header border-0 text-white" id="background-blue">
-                <h4 class="modal-title" ><i class="fas fa-user-edit fa-lg"></i> Editar perfil</h4>
+                <h5 class="modal-title"><i class="fas fa-user-edit"></i> Editar perfil</h5>
                 <a href="" class="close text-white" data-dismiss="modal" aria-label="Cancelar">
                     <i class="fas fa-times-circle fa-lg"></i>
                 </a> 
@@ -32,14 +30,14 @@
 
             <br>
             <ul class="nav nav-tabs">
-                <li class="nav-item active">
+                <li class="nav-item active ml-3">
                     <a href="#geral" class="nav-link active" data-toggle="tab" role="tab">
-                        <i class="fal fa-clipboard-user fa-lg"></i> Geral
+                        <i class="fas fa-user"></i> Geral
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#avancado" class="nav-link" data-toggle="tab" role="tab">
-                        <i class="far fa-user-lock fa-lg"></i> Senha
+                        <i class="fas fa-key"></i> Senha
                     </a>
                 </li>
             </ul>
@@ -47,7 +45,7 @@
             <div class="modal-body tab-content">
                 <div class="tab-pane fade in show active" id="geral" role="tabpanel">
                     <div class="alert alert-info" role="alert">
-                        <h5 class="alert-heading"><i class="far fa-comment-alt-exclamation fa-lg"></i> Atenção</h5>
+                        <h5 class="alert-heading"><i class="fas fa-exclamation-circle fa-lg"></i> Atenção</h5>
                         <p> Ao clicar em <b>ALTERAR</b> os dados serão salvos em sua conta.</p>
                     </div>
                     <form method="post" name="atualizar-dados" autocomplete="off" action="/registros_pedagogicos/AlterarPedagogaServlet">
@@ -69,7 +67,7 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" name="acao" value="alterarUsuario" class="btn btn-primary"><i class="far fa-save fa-lg"></i> Salvar alterações</button>
+                            <button type="submit" name="acao" value="alterarUsuario" class="btn btn-primary"><i class="fas fa-save fa-lg"></i> Salvar alterações</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
                         </div>
 
@@ -78,7 +76,7 @@
 
                 <div class="tab-pane fade in show" id="avancado" role="tabpanel">
                     <div class="alert alert-warning" role="alert">
-                        <h5 class="alert-heading"><i class="far fa-key fa-lg"></i> Atenção</h5>
+                        <h5 class="alert-heading"><i class="fas fa-exclamation-triangle fa-lg"></i> Atenção</h5>
                         <p> Ao clicar em <b>ALTERAR</b> a sua nova senha será salva em sua conta.</p>
                     </div>
 
@@ -102,7 +100,7 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" name="acao" value="alterarSenha" class="btn btn-primary"><i class="far fa-user-lock fa-lg"></i> Salvar senha</button>
+                            <button type="submit" name="acao" value="alterarSenha" class="btn btn-primary"><i class="fas fa-user-lock fa-lg"></i> Salvar senha</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle fa-lg"></i> Cancelar</button>
                         </div>
 

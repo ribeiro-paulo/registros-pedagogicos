@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>InserirAlunos</servlet-name>
-        <servlet-class>tests.InserirAlunos</servlet-class>
+        <servlet-class>servlet.InserirAlunos</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegistroServlet</servlet-name>
