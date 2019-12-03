@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small  pt-4" id="background-blue" style="color: white; margin-top: 2%">
+<footer class="page-footer font-small bg-blue text-white  pt-4">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
