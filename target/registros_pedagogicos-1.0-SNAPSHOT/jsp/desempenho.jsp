@@ -110,10 +110,22 @@
                                         %>
                                         <tr>
                                             <td scope="row"><a href="" data-toggle="modal" data-target=".modal<%= disciplina.getId()%>"><%= disciplina.getNome()%> </a></td>
-                                            <td> <input type="text" value="<%= boletim.getN1()%>" id="<%=disciplina.getId()%>"/></td>
-                                            <td id="n2<%= disciplina.getNome()%>"><%= boletim.getN2()%></td>
-                                            <td id="n3<%= disciplina.getNome()%>"><%= boletim.getN3()%></td>
-                                            <td id="n4<%= disciplina.getNome()%>"><%= boletim.getN4()%></td>
+                                            <td> 
+                                                <input hidden type="text" value="<%= boletim.getN1()%>" id="1<%=disciplina.getId()%>"/>
+                                                <%= boletim.getN1()%>
+                                            </td>
+                                            <td>
+                                                <input hidden type="text" value="<%= boletim.getN2()%>" id="2<%=disciplina.getId()%>"/>
+                                                <%= boletim.getN2()%>
+                                            </td>
+                                            <td>
+                                                <input hidden type="text" value="<%= boletim.getN3()%>" id="3<%=disciplina.getId()%>"/>
+                                                <%= boletim.getN3()%>
+                                            </td>
+                                            <td>
+                                                <input hidden type="text" value="<%= boletim.getN4()%>" id="4<%=disciplina.getId()%>"/>
+                                                <%= boletim.getN4()%> 
+                                            </td>
                                             <td>Aprovado</td>
                                         </tr>
 
@@ -140,6 +152,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <input hidden type="text" value="<%= notas.size()%>" id="qtdDisciplinas">
                             <div class="col-12">
                                 <br>
                                 <h4>Rendimento anual</h4>
