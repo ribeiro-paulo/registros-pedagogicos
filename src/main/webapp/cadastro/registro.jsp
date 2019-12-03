@@ -11,7 +11,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="../css/style.css">
-        <script src="https://kit.fontawesome.com/bff2ac77b8.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/bff2ac77b8.js"></script>
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.js"></script>
@@ -30,9 +30,9 @@
                 %>
 
                 <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
-                    <a class="navbar-brand text-white" href="../jsp/index.jsp"> <i class="fas fa-arrow-alt-circle-left fa-lg"></i> <b> <%= aluno.getNome()%> </b></a>
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-chevron-left"></i> <%= aluno.getNome().trim().split(" ")[0]%></a>
                 </nav>
-                <div class="card mb-5 border-0 col-12">
+                <div class="card mb-5 px-4 py-2">
                     <br>
                     <form method="post" name="dados_cadastro" action="/registros_pedagogicos/RegistroServlet">
                         <div class="form-row">

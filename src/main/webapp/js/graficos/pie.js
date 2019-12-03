@@ -34,4 +34,4 @@ var myChart = new Chart(ctx, {
             }]
         }
     }
-});v
+});

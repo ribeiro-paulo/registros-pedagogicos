@@ -1,11 +1,15 @@
-var ctx = document.getElementById('horizontal-bar');
+var etapa1 = document.getElementById('etapa1').value
+var etapa2 = document.getElementById('etapa2').value
+var etapa3 = document.getElementById('etapa3').value
+var etapa4 = document.getElementById('etapa4').value
+var ctx = document.getElementById('pier')
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ['1° etapa', '2° etapa', '3° etapa', '4° etapa'],
+        labels: ['Primeira etapa', 'Segunda etapa', 'Terceira etapa', 'Quarta etapa'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# Pontos por etapa',
+            data: [etapa1, etapa2, etapa3, etapa4],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -23,6 +27,11 @@ var myChart = new Chart(ctx, {
     },
     options: {
         scales: {
+            xAxes: [{
+                ticks: {
+                    min: 0 // Edit the value according to what you need
+                }
+            }],
             yAxes: [{
                 ticks: {
                     beginAtZero: true

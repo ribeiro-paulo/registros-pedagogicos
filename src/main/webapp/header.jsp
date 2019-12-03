@@ -12,7 +12,6 @@
     <div class="collapse navbar-collapse" id="col">
         <ul class="navbar-nav mr-auto">
         </ul>
-        <a class="nav-link text-white" href="#"><i class="fas fa-sticky-note fa-lg"></i> Ver relatórios</a>
         <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#exampleModa"><i class="fas fa-user-edit fa-lg"></i> Editar perfil</a>
         <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#ModalSair"> <i class="fas fa-sign-out-alt fa-lg"></i> Encerrar sessão</a>
     </div>

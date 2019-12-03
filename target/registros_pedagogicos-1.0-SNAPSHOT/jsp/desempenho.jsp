@@ -23,13 +23,10 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="../css/style.css">
-        <script src="../js/fontAwesome-pro/fontAwesome.js"></script>
-        <script src="https://kit.fontawesome.com/bff2ac77b8.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/bff2ac77b8.js"></script>
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
-
     </head>
-
     <%
         Aluno aluno = new Aluno();
         AlunoDAO alunoDAO = new AlunoDAO();
@@ -37,16 +34,14 @@
 
     %>
     <body class="body">
-        <jsp:include page="../header.jsp"/>
-        <div class="container body">
+        <jsp:include page="../header.jsp"/>  
+        <main>
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light" id="background-blue">
-                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-arrow-alt-circle-left fa-lg"></i> Pasta de <b><%= aluno.getNome()%> </a>
+                <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-chevron-left"></i> <%= aluno.getNome().trim().split(" ")[0]%>  </a>
                 </nav>
-
                 <div class=" card mb-5 border-0">
-                    <div class="col-12">
-                        <br> 
+                    <div class="px-4 py-2">
                         <div class="form-row">
                             <div class="col-lg-2 text-center border">
                                 <i class="text-grey fas fa-user fa-10x mt-1"></i>
@@ -84,7 +79,7 @@
                         </ul>
                         <br>
 
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-md-12 table-responsive-lg">
                                 <h4>Boletim</h4>
                                 <table class="table table-bordered">
@@ -100,7 +95,6 @@
                                     </thead>
                                     <tbody>
                                         <%
-
                                             BoletimDAO boletimDAO = new BoletimDAO();
                                             List<Boletim> notas = boletimDAO.getBoletimByAluno(aluno);
 
@@ -153,35 +147,29 @@
                                 </table>
                             </div>
                             <input hidden type="text" value="<%= notas.size()%>" id="qtdDisciplinas">
+
+                            <!--media anual valores-->
+                            <%
+                                int valor = 0;
+                                List<Float> mediaPorEtapa = boletimDAO.mediaEtapa(aluno);
+                                for (Float etapa : mediaPorEtapa) {
+                                    valor++;
+                            %>
+                            <input hidden type="text" value="<%=etapa%>"  id="etapa<%=valor%>">
+                            <%}%>
                             <div class="col-12">
                                 <br>
                                 <h4>Rendimento anual</h4>
-                                <canvas id="horizontal-bar"></canvas>
+                                <canvas id="pier"></canvas>  
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
         <jsp:include page="../footer.jsp"/>
     </body>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script src="../js/Chart.min.js"></script>
-    <script type="text/javascript" src="../js/graficos/line.js"></script>
-    <script type="text/javascript" src="../js/graficos/linepinc.js"></script>
-    <script type="text/javascript" src="../js/graficos/linegreen.js"></script>
-    <script type="text/javascript" src="../js/graficos/linered.js"></script>
-    <script type="text/javascript" src="../js/graficos/lineorange.js"></script>
-    <script type="text/javascript" src="../js/graficos/linedarkblue.js"></script>
-    <script type="text/javascript" src="../js/graficos/line2.js"></script>
-    <script type="text/javascript" src="../js/graficos/bar.js"></script>
-    <script type="text/javascript" src="../js/graficos/horizontal-bar.js"></script>
-    <script type="text/javascript" src="../js/graficos/pie.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-</html>
-
-
-
+    <script type="text/javascript" src="../js/graficos/line2.js"></script>  
+    <script type="text/javascript" src="../js/graficos/horizontal-bar.js"></script>       
+</html>    

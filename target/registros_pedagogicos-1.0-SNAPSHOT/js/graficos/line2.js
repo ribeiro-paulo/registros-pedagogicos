@@ -15,15 +15,15 @@ for (i = 1; i <= qtdDisciplinas; i++) {
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['1° etapa', '2° etapa', '3° etapa', '4° etapa'],
+            labels: ['Primeira etapa', 'Segunda etapa', 'terceira etapa', 'Quarta etapa'],
             datasets: [{
-                    label: 'of Votes',
+                    label: 'Pontos por etapa',
                     data: [n1, n2, n3, n4],
                     backgroundColor: [
-                        'rgba(0, 81, 255, 0.4)'
+                        'rgba(20, 143, 209, 0.3)'
                     ],
                     borderColor: [
-                        'rgba(0, 81, 255, 1)'
+                        'rgba(0, 64, 99, 1)'
                     ],
                     borderWidth: 1
                 }]

@@ -5,6 +5,7 @@
  */
 package model.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import model.bean.Aluno;
@@ -27,5 +28,31 @@ public class BoletimDAO {
                 .setParameter("aluno", aluno);
         manager.getTransaction().commit();
         return query.getResultList();
+    }
+    
+    public List<Float> mediaEtapa(Aluno aluno){
+        
+        List<Float> mediaEtapas = new ArrayList();
+        List<Boletim> notas = getBoletimByAluno(aluno);
+        float etapa1 = 0, etapa2 = 0, etapa3 = 0, etapa4 = 0;
+        
+        for(Boletim nota: notas){
+            etapa1 += nota.getN1();
+            etapa2 += nota.getN2();
+            etapa3 += nota.getN3();
+            etapa4 += nota.getN4();
+        }
+        
+        etapa1 = etapa1/notas.size();
+        etapa2 = etapa2/notas.size();
+        etapa3 = etapa3/notas.size();
+        etapa4 = etapa4/notas.size();
+        
+        mediaEtapas.add(etapa1);
+        mediaEtapas.add(etapa2);
+        mediaEtapas.add(etapa3);
+        mediaEtapas.add(etapa4);
+        
+        return mediaEtapas;
     }
 }

@@ -1,3 +1,7 @@
+var etapa1 = document.getElementById('media1')
+var etapa2 = document.getElementById('media2')
+var etapa3 = document.getElementById('media3')
+var etapa4 = document.getElementById('media4')
 var ctx = document.getElementById('bar');
 var myChart = new Chart(ctx, {
     type: 'bar',
