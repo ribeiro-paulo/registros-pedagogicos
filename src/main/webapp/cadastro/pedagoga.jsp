@@ -19,7 +19,6 @@
         <nav class="navbar navbar-light bg-blue mb-4">
             <a class="text-white h3"><i class="fas fa-file-alt"></i><b> Registros</b> Pedagógicos</a>
         </nav>
-
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
