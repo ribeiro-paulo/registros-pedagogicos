@@ -44,10 +44,21 @@ public class Boletim implements BaseEntity, Serializable{
     private float n3;
     @Column
     private float n4;
+    @Column
+    private String situacao;
 
     public Boletim() {
     }
 
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+
+    
     public Long getId() {
         return id;
     }

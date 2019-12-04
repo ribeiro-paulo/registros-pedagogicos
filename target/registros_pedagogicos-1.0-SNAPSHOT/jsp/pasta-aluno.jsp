@@ -29,26 +29,6 @@
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.js"></script>
-
-        <style>
-            @media print {
-                footer * {
-                    visibility: hidden;
-                }
-
-                link * {
-                    visibility: hidden;
-                }
-
-                nav *{
-                    visibility: visible;   
-                }
-                
-                #ocultar * {
-                    visibility: hidden;
-                }
-            }
-        </style>  
     </head>
 
     <%
@@ -61,7 +41,7 @@
         <jsp:include page="../header.jsp"/>
         <main>
             <div class="container">
-                <nav class="navbar navbar-light" id="background-blue">
+                <nav class="navbar navbar-light bg-blue">
                     <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-chevron-left"></i> <%= aluno.getNome().trim().split(" ")[0]%></a>
                     <a href="" id="btnImprimir" class="text-white"><i class="fa fa-print fa-lg"></i> Imprimir</a>
                 </nav>
@@ -135,10 +115,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <br>
-
-                        <ul class="nav nav-tabs" id="ocultar">  
+                        <ul class="nav nav-tabs mt-3" id="ocultar">  
                             <li class="nav-item">
                                 <a class="nav-link active" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>"><i class="far fa-clone fa-lg"></i> Últimos registros</a>
                             </li>
@@ -146,14 +123,12 @@
                                 <a class="nav-link" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="fas fa-chart-bar fa-lg"></i> Ver desempenho</a>
                             </li>
                         </ul>
-
-                        <br>
                         <% RegistroDAO registroDAO = new RegistroDAO();
                             List<Registro> registros = registroDAO.getRegistroByMatricula(request.getParameter("matricula"));
                             if (registros.size() > 0) {
                                 for (Registro r : registros) {%>
                         <form action="/registros_pedagogicos/RegistroServlet" method="POST">
-                            <div class="form-row">
+                            <div class="form-row mt-3">
                                 <div class="card col-md-12">
                                     <div class="card-header">
                                         <div class="form-row">

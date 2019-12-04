@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page import="model.bean.Disciplina"%>
 <%@page import="model.dao.DisciplinaDAO"%>
 <%@page import="model.bean.Boletim"%>
@@ -37,16 +38,22 @@
         <jsp:include page="../header.jsp"/>  
         <main>
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-blue">
-                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-chevron-left"></i> <%= aluno.getNome().trim().split(" ")[0]%>  </a>
+                <nav class="navbar navbar-light bg-blue">
+                    <a class="navbar-brand text-white" href="../jsp/index.jsp"><i class="fa fa-chevron-left"></i> <%= aluno.getNome().trim().split(" ")[0]%></a>
+                    <a href="" id="btnImprimir" class="text-white"><i class="fa fa-print fa-lg"></i> Imprimir</a>
                 </nav>
                 <div class=" card mb-5 border-0">
                     <div class="px-4 py-2">
                         <div class="form-row">
-                            <div class="col-lg-2 text-center border">
-                                <i class="text-grey fas fa-user fa-10x mt-1"></i>
+                            <div class="col-md-3">
+                                <div class="row justify-content-center px-0 py-0 pt-1">
+                                    <div class="col-md-9 text-center border bg-light">
+                                        <i class="text-grey fas fa-user fa-9x mt-1"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-row col-lg-10">
+
+                            <div class="form-row col-md-9">
                                 <div class="form-group col-md-12">
                                     <label for="discente">Discente</label>
                                     <input class="form-control" type="text" id="discente" name="discente" maxlength="12" value="<%=aluno.getNome()%>" placeholder="Nome do discente" readonly>
@@ -67,9 +74,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <br>
-                        <ul class="nav nav-tabs">
+                        <ul class="nav nav-tabs mt-3" id="ocultar">    
                             <li class="nav-item">
                                 <a class="nav-link" href="pasta-aluno.jsp?matricula=<%=aluno.getMatricula()%>&status=false"><i class="far fa-clone fa-lg"></i> Últimos registros</a>
                             </li>
@@ -77,9 +82,7 @@
                                 <a class="nav-link active" href="desempenho.jsp?matricula=<%=aluno.getMatricula()%>"><i class="fas fa-chart-bar fa-lg"></i> Ver desempenho</a>
                             </li>
                         </ul>
-                        <br>
-
-                        <div class="row mb-3">
+                        <div class="row mb-3 mt-3">
                             <div class="col-md-12 table-responsive-lg">
                                 <h4>Boletim</h4>
                                 <table class="table table-bordered">
@@ -103,7 +106,7 @@
                                                 Disciplina disciplina = disciolinaDAO.getById(boletim.getDisciplina());
                                         %>
                                         <tr>
-                                            <td scope="row"><a href="" data-toggle="modal" data-target=".modal<%= disciplina.getId()%>"><%= disciplina.getNome()%> </a></td>
+                                            <td scope="row"><a href="" data-toggle="modal" data-target=".modal<%= disciplina.getId()%>"><i class="fas fa-chart-bar fa-lg"></i> <%= disciplina.getNome()%> </a></td>
                                             <td> 
                                                 <input hidden type="text" value="<%= boletim.getN1()%>" id="1<%=disciplina.getId()%>"/>
                                                 <%= boletim.getN1()%>
@@ -120,7 +123,7 @@
                                                 <input hidden type="text" value="<%= boletim.getN4()%>" id="4<%=disciplina.getId()%>"/>
                                                 <%= boletim.getN4()%> 
                                             </td>
-                                            <td>Aprovado</td>
+                                            <td><%= boletim.getSituacao()%> </td>
                                         </tr>
 
                                     <div class="modal fade modal<%= disciplina.getId()%>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -137,6 +140,7 @@
                                                     <canvas id="line<%= disciplina.getId()%>"></canvas>
                                                 </div>
                                                 <div class="modal-footer">
+
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                                 </div>
                                             </div>  
@@ -171,5 +175,11 @@
     </body>
     <script src="../js/Chart.min.js"></script>
     <script type="text/javascript" src="../js/graficos/line2.js"></script>  
-    <script type="text/javascript" src="../js/graficos/horizontal-bar.js"></script>       
+    <script type="text/javascript" src="../js/graficos/horizontal-bar.js"></script>    
+    <script type="text/javascript">
+
+        $("#btnImprimir").click(function () {
+            window.print();
+        });
+    </script>
 </html>    

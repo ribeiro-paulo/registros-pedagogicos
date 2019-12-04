@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -99,7 +100,9 @@ public class InserirAlunos extends HttpServlet {
         disciplinas.add(new Disciplina("Geografica"));
         disciplinas.add(new Disciplina("Química"));
         disciplinas.add(new Disciplina("Inglês"));
-
+        
+        Random rn = new Random();
+        
         for (int i = 0; i < disciplinas.size(); i++) {
             GenericDAO<Disciplina> gerericDisciplina = new GenericDAO<>();
             gerericDisciplina.saveOrUpdate(disciplinas.get(i));
@@ -111,11 +114,19 @@ public class InserirAlunos extends HttpServlet {
                 Boletim boletim = new Boletim();
                 boletim.setAluno(alunos.get(i));
                 boletim.setDisciplina(disciplinas.get(j));
-                boletim.setN1(10);
-                boletim.setN2(5);
-                boletim.setN3(6);
-                boletim.setN4(8);
+                boletim.setN1(rn.nextInt(10) + 1);
+                boletim.setN2(rn.nextInt(10) + 1);
+                boletim.setN3(rn.nextInt(10) + 1);
+                boletim.setN4(rn.nextInt(10) + 1);
+                
+                float media = (boletim.getN1() + boletim.getN2() + boletim.getN3() + boletim.getN4())/4;
+                if(media >= 6)
+                    boletim.setSituacao("Aprovado");
+                else
+                    boletim.setSituacao("Reprovado");
+                
                 genericBoletim.saveOrUpdate(boletim);
+                
             }
         }
         response.sendRedirect("../registros_pedagogicos/index.jsp");

@@ -8,6 +8,24 @@ and open the template in the editor.
     Author     : Aluno
 */
 
+@media print {
+    footer * {
+        visibility: hidden;
+    }
+
+    link * {
+        visibility: hidden;
+    }
+
+    nav *{
+        visibility: visible;   
+    }
+
+    #ocultar * {
+        visibility: hidden;
+    }
+}
+
 body {
     margin:0;
     padding:0;  
