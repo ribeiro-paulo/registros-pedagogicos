@@ -16,6 +16,7 @@
 <%@page import="model.dao.RegistroDAO"%>
 <%@page import="model.dao.AlunoDAO"%>
 <%@page import="model.bean.Aluno"%>
+<%@page import="org.apache.commons.io.IOUtils"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -175,7 +176,7 @@
                                     </div>
                                     <div class="card-body">
                                         <a class="text-grey"><strong><%= r.getTipoDeOcorrencia()%></strong></a>
-                                        <p class="card-text"><%= r.getDescricao()%></p>
+                                        <p class="card-text"><%=IOUtils.toString(r.getDescricao(), "utf-8")%></p>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +211,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <a class="text-grey"><strong><%= r.getTipoDeOcorrencia()%></strong></a>
-                                                    <p class="card-text"><%= r.getDescricao()%></p>
+                                                    <p class="card-text"><%=IOUtils.toString(r.getDescricao(), "utf-8")%></p>                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -279,7 +280,7 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <a>Descrição:</a>
-                                                        <textarea class="form-control"  rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"><%= r.getDescricao()%></textarea>
+                                                        <textarea class="form-control"  rows="5" id="descricao" name="descricao" placeholder="Descrição sobre a ocorrência"><%=IOUtils.toString(r.getDescricao(), "utf-8")%></textarea>
                                                     </div>
                                                 </div>
                                             </div>
