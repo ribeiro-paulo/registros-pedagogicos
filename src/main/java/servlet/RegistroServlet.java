@@ -10,6 +10,7 @@ import model.bean.Aluno;
 import model.bean.Registro;
 import model.dao.AlunoDAO;
 import model.dao.GenericDAO;
+import org.apache.commons.io.IOUtils;
 
 /**
  *
@@ -49,7 +50,10 @@ public class RegistroServlet extends HttpServlet {
             registro.setMatricula(request.getParameter("matricula"));
             registro.setData(request.getParameter("data"));
             registro.setTipoDeOcorrencia(request.getParameter("tipoDeOcorrencia"));
-            registro.setDescricao(request.getParameter("descricao"));
+            registro.setDescricao(request.getParameter("descricao").getBytes());
+            
+            System.out.println(request.getParameter("descricao"));
+
 
             AlunoDAO dao2 = new AlunoDAO();
             Aluno a = dao2.findByMatricula(request.getParameter("matricula"));
@@ -79,7 +83,8 @@ public class RegistroServlet extends HttpServlet {
             Registro r = dao.findById(Registro.class, idLong);
             r.setData(request.getParameter("data"));
             r.setTipoDeOcorrencia(request.getParameter("tipoDeOcorrencia"));
-            r.setDescricao(request.getParameter("descricao"));
+            r.setDescricao(request.getParameter("descricao").getBytes());
+            System.out.println(request.getParameter("descricao"));
             dao.saveOrUpdate(r);
             
             response.sendRedirect("../registros_pedagogicos/jsp/pasta-aluno.jsp?matricula=" + request.getParameter("matricula") + "&status=alterado");
