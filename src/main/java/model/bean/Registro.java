@@ -32,8 +32,8 @@ public class Registro implements BaseEntity, Serializable {
     private String data;
     @Column
     private String tipoDeOcorrencia;
-    @Column
-    private String descricao;
+    @Column(length = 255, columnDefinition = "longblob")
+    private byte[] descricao;
     
     @ManyToOne
     private Aluno aluno;
@@ -42,7 +42,7 @@ public class Registro implements BaseEntity, Serializable {
         
     }
 
-    public Registro(String matricula, String data, String tipoDeOcorrencia, String descricao) {
+    public Registro(String matricula, String data, String tipoDeOcorrencia, byte[] descricao) {
         this.matricula = matricula;
         this.data = data;
         this.tipoDeOcorrencia = tipoDeOcorrencia;
@@ -82,11 +82,11 @@ public class Registro implements BaseEntity, Serializable {
         this.tipoDeOcorrencia = tipoDeOcorrencia;
     }
 
-    public String getDescricao() {
+    public byte[] getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(byte[] descricao) {
         this.descricao = descricao;
     }
 
